@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
+import 'package:tourism/src/features/authentication/screens/singup/signup_screen.dart';
+import 'package:tourism/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:tourism/src/features/authentication/screens/welcome/welcome_screen.dart';
 
 class TmpScreensScreen extends StatelessWidget {
   const TmpScreensScreen({
@@ -14,12 +18,13 @@ class TmpScreensScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Screens"),
-              /*ElevatedButton(onPressed: () => Get.to(() => const SplashScreen()), child: const Text("Splash")),
+            children: [
+              const Text("Screens"),
+              ElevatedButton(onPressed: () => Get.to(() => const SplashScreen()), child: const Text("Splash")),
               ElevatedButton(onPressed: () => Get.to(() => const LoginScreen()), child: const Text("Login")),
               ElevatedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text("SignUp")),
-              ElevatedButton(onPressed: () => Get.to(() => const CalendarScreen()), child: const Text("Calendar")),
+              ElevatedButton(onPressed: () => Get.to(() => const WelcomeScreen()), child: const Text("Welcome")),
+              /*ElevatedButton(onPressed: () => Get.to(() => const CalendarScreen()), child: const Text("Calendar")),
               ElevatedButton(onPressed: () => Get.to(() => const PatientsListScreen()), child: const Text("Patients List")),
               ElevatedButton(onPressed: () => Get.to(() => const PatientDetailsScreen()), child: const Text("Patient Detail")),
               ElevatedButton(onPressed: () => Get.to(() => const AddAppointmentScreen()), child: const Text("Add Appointment")),
