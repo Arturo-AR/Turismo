@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tourism/src/utils/theme/theme.dart';
 import 'package:tourism/src/utils/tmp/main_tmp_screen.dart';
 
 class App extends StatelessWidget {
@@ -7,14 +8,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       /// -- README(Docs[3]) -- Bindings
       //initialBinding: InitialBinding(),
       themeMode: ThemeMode.system,
-      //theme: AAppTheme.lightTheme,
-      //darkTheme: AAppTheme.darkTheme,
+      theme: AAppTheme.lightTheme,
+      darkTheme: AAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: Center(child: TmpScreen())),
+      home: const Scaffold(body: Center(child: TmpScreen())),
     );
   }
 }
