@@ -21,3 +21,16 @@ const String aSignInWithGoogle = "Sign-In with Google";
 // -- Welcome Screen Text
 const String aWelcomeTitle = "Explore the whole World !";
 const String aWelcomeSubTitle = "Let's discover the best corners of the world.";
+
+
+// -- Login Screen Text
+const String aLoginTitle = "Welcome Back,";
+const String aLoginSubTitle = "Make it work, make it right, make it fast.";
+const String aRememberMe = "Remember Me?";
+const String aDontHaveAnAccount = "Don't have an Account";
+const String aEnterYour = "Enter your";
+const String aResetPassword = "Reset Password";
+const String aOR = "OR";
+const String aConnectWith = "Connect With";
+const String aFacebook = "Facebook";
+const String aGoogle = "Google";
