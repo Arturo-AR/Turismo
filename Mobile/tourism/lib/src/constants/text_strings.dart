@@ -34,3 +34,9 @@ const String aOR = "OR";
 const String aConnectWith = "Connect With";
 const String aFacebook = "Facebook";
 const String aGoogle = "Google";
+
+
+// -- Sign Up Screen Text
+const String aSignUpTitle = "Get On Board!";
+const String aSignUpSubTitle = "Create your profile to start your Journey.";
+const String aAlreadyHaveAnAccount = "Already have an Account";
