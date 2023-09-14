@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tourism/src/constants/images_strings.dart';
 import 'package:tourism/src/constants/text_strings.dart';
+import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
+import 'package:tourism/src/features/authentication/screens/singup/signup_screen.dart';
+import 'package:tourism/src/features/core/screens/places_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -47,16 +51,16 @@ class WelcomeScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: OutlinedButton(
-                              //onPressed: () => Get.to(() => const LoginScreen()),
-                              onPressed: () {},
+                              onPressed: () => Get.to(() => const LoginScreen()),
+                              //onPressed: () {},
                               child: Text(aLogin.toUpperCase()),
                             ),
                           ),
                           const SizedBox(width: 10.0),
                           Expanded(
                             child: ElevatedButton(
-                              //onPressed: () => Get.to(() => const SignupScreen()),
-                              onPressed: () {},
+                              onPressed: () => Get.to(() => const SignupScreen()),
+                              //onPressed: () {},
                               child: Text(aSignup.toUpperCase()),
                             ),
                           ),
@@ -66,8 +70,8 @@ class WelcomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            //onPressed: () => Get.to(() => const LoginScreen()),
-                            onPressed: () {},
+                            onPressed: () => Get.offAll(() => const PlacesScreen()),
+                            //onPressed: () {},
                             child: Text(aGuest.toUpperCase()),
                           ),
                         ],

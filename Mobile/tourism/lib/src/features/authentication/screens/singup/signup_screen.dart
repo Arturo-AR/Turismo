@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tourism/src/common_widgets/form/form_divider_widget.dart';
 import 'package:tourism/src/common_widgets/form/form_header_widget.dart';
 import 'package:tourism/src/common_widgets/form/social_footer.dart';
 import 'package:tourism/src/constants/images_strings.dart';
 import 'package:tourism/src/constants/text_strings.dart';
+import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
 import 'package:tourism/src/features/authentication/screens/singup/widgets/signup_form_widget.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -20,10 +22,10 @@ class SignupScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const FormHeaderWidget(
-                    image: aWelcomeScreenImage, title: aSignUpTitle, subTitle: aSignUpSubTitle, imageHeight: 0.1),
+                    image: aAppLogo, title: aSignUpTitle, subTitle: aSignUpSubTitle, imageHeight: 0.1),
                 const SignUpFormWidget(),
                 const AFormDividerWidget(),
-                SocialFooter(text1: aAlreadyHaveAnAccount, text2: aLogin, onPressed: () {}/*=> Get.off(() => const LoginScreen())*/),
+                SocialFooter(text1: aAlreadyHaveAnAccount, text2: aLogin, onPressed: () => Get.off(() => const LoginScreen())),
               ],
             ),
           ),

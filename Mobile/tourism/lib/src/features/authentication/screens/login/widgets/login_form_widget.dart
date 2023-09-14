@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:tourism/src/constants/text_strings.dart';
+import 'package:tourism/src/features/core/screens/places_screen.dart';
 
 class LoginFormWidget extends StatelessWidget {
   const LoginFormWidget({
@@ -69,14 +70,14 @@ class LoginFormWidget extends StatelessWidget {
             const SizedBox(height: 10),
 
             /// -- FORGET PASSWORD BTN
-            Align(
+           /* Align(
               alignment: Alignment.centerRight,
               child: TextButton(
                 //onPressed: () => ForgetPasswordScreen.buildShowModalBottomSheet(context),
                 onPressed: () {},
                 child: const Text(aForgetPassword),
               ),
-            ),
+            ),*/
 
             /// -- LOGIN BTN
             /*Obx(
@@ -93,7 +94,7 @@ class LoginFormWidget extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.offAll(() => const PlacesScreen()),
                 child: Text(aLogin.tr.toUpperCase()),
               ),
             )

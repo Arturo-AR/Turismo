@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:tourism/src/common_widgets/buttons/primary_button.dart';
 import 'package:tourism/src/constants/text_strings.dart';
+import 'package:tourism/src/features/core/screens/places_screen.dart';
 
 class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
@@ -91,7 +92,7 @@ class SignUpFormWidget extends StatelessWidget {
             APrimaryButton(
               //isLoading: controller.isLoading.value ? true : false,
               text: aSignup.tr,
-              onPressed: () {}/*controller.isFacebookLoading.value || controller.isGoogleLoading.value
+              onPressed: () => Get.offAll(() => const PlacesScreen())/*controller.isFacebookLoading.value || controller.isGoogleLoading.value
                   ? () {}
                   : controller.isLoading.value
                   ? () {}
