@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tourism/src/constants/colors.dart';
 import 'package:tourism/src/constants/images_strings.dart';
 import 'package:tourism/src/constants/text_strings.dart';
 import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
@@ -17,12 +18,13 @@ class WelcomeScreen extends StatelessWidget {
     var mediaQuery = MediaQuery.of(context);
     var width = mediaQuery.size.width;
     var height = mediaQuery.size.height;
-    //var brightness = mediaQuery.platformBrightness;
-    //final isDarkMode = brightness == Brightness.dark;
+    var brightness = mediaQuery.platformBrightness;
+    final isDarkMode = brightness == Brightness.dark;
 
     return SafeArea(
       child: Scaffold(
-        //backgroundColor: isDarkMode ? tSecondaryColor : tPrimaryColor,
+        backgroundColor: isDarkMode ? aSecondaryColor : aBackGroundColor,
+        //backgroundColor: aBackGroundColor,
         body: Stack(
           children: [
             Container(
@@ -33,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                   Hero(
                       tag: 'welcome-image-tag',
                       child: Image(
-                          image: const AssetImage(aAppLogo),
+                          image: const AssetImage(aAppImage),
                           width: width * 0.7,
                           height: height * 0.4)),
                   Column(
@@ -66,13 +68,17 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
                             onPressed: () => Get.offAll(() => const PlacesScreen()),
                             //onPressed: () {},
-                            child: Text(aGuest.toUpperCase()),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: Text(aGuest.toUpperCase()),
+                            ),
                           ),
                         ],
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tourism/src/common_widgets/buttons/clickable_richtext_widget.dart';
 import 'package:tourism/src/common_widgets/form/form_divider_widget.dart';
 import 'package:tourism/src/common_widgets/form/form_header_widget.dart';
 import 'package:tourism/src/common_widgets/form/social_footer.dart';
@@ -22,10 +23,15 @@ class SignupScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const FormHeaderWidget(
-                    image: aAppLogo, title: aSignUpTitle, subTitle: aSignUpSubTitle, imageHeight: 0.1),
+                    image: aAppImage, title: aSignUpTitle, subTitle: aSignUpSubTitle, imageHeight: 0.1),
                 const SignUpFormWidget(),
-                const AFormDividerWidget(),
-                SocialFooter(text1: aAlreadyHaveAnAccount, text2: aLogin, onPressed: () => Get.off(() => const LoginScreen())),
+                //const AFormDividerWidget(),
+                //SocialFooter(text1: aAlreadyHaveAnAccount, text2: aLogin, onPressed: () => Get.off(() => const LoginScreen())),
+                ClickableRichTextWidget(
+                  text1: aAlreadyHaveAnAccount.tr,
+                  text2: aLogin.tr,
+                  onPressed: () => Get.off(() => const LoginScreen()),
+                ),
               ],
             ),
           ),

@@ -2,41 +2,41 @@
 
 // -- GLOBAL Texts
 const String aNo = "No";
-const String aYes = "Yes";
-const String aNext = "Next";
-const String aLogin = "Login";
-const String aGuest = "Guest";
-const String aEmail = "E-Mail";
-const String aSignup = "Signup";
-const String aLogout = "Logout";
-const String aSuccess = "Success";
-const String aPhoneNo = "Phone No";
-const String aContinue = "Continue";
-const String aPassword = "Password";
-const String aFullName = "Full Name";
-const String aGetStarted = "Get Started";
-const String aForgetPassword = "Forget Password?";
-const String aSignInWithGoogle = "Sign-In with Google";
+const String aYes = "Si";
+const String aNext = "Siguiente";
+const String aLogin = "Iniciar Sesion";
+const String aGuest = "Invitado";
+const String aEmail = "Correo Electronico";
+const String aSignup = "Crear Cuenta";
+const String aLogout = "Cerrar Sesion";
+const String aSuccess = "Exito";
+const String aPhoneNo = "Número Telefónico";
+const String aContinue = "Continuar";
+const String aPassword = "Contraseña";
+const String aFullName = "Nombre Completo";
+const String aGetStarted = "Empezar";
+const String aForgetPassword = "Olvidaste tu contraseña?";
+const String aSignInWithGoogle = "Inicia Sesion con Google";
 
 // -- Welcome Screen Text
-const String aWelcomeTitle = "Explore the whole World !";
-const String aWelcomeSubTitle = "Let's discover the best corners of the world.";
+const String aWelcomeTitle = "Explora el mundo entero !";
+const String aWelcomeSubTitle = "Vamos a descubrir los mejores rincones del mundo.";
 
 
 // -- Login Screen Text
-const String aLoginTitle = "Welcome Back,";
-const String aLoginSubTitle = "Make it work, make it right, make it fast.";
+const String aLoginTitle = "Bienvenido de vuelta";
+const String aLoginSubTitle = "Viaja, explora, descubre, escanea, aprende.";
 const String aRememberMe = "Remember Me?";
-const String aDontHaveAnAccount = "Don't have an Account";
+const String aDontHaveAnAccount = "No tienes una cuenta";
 const String aEnterYour = "Enter your";
 const String aResetPassword = "Reset Password";
-const String aOR = "OR";
-const String aConnectWith = "Connect With";
+const String aOR = "O";
+const String aConnectWith = "Conectate con";
 const String aFacebook = "Facebook";
 const String aGoogle = "Google";
 
 
 // -- Sign Up Screen Text
-const String aSignUpTitle = "Get On Board!";
-const String aSignUpSubTitle = "Create your profile to start your Journey.";
-const String aAlreadyHaveAnAccount = "Already have an Account";
+const String aSignUpTitle = "Empecemos el viaje!";
+const String aSignUpSubTitle = "Crea tu perfil para iniciar tu aventura.";
+const String aAlreadyHaveAnAccount = "Ya tienes una cuenta";

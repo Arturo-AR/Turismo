@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:tourism/src/common_widgets/buttons/primary_button.dart';
+import 'package:tourism/src/constants/colors.dart';
 import 'package:tourism/src/constants/text_strings.dart';
 import 'package:tourism/src/features/core/screens/places_screen.dart';
 

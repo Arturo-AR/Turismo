@@ -22,10 +22,10 @@ class ClickableRichTextWidget extends StatelessWidget {
         child: Text.rich(
           TextSpan(
             children: [
-              TextSpan(text: '${text1.tr}? ', style: Theme.of(context).textTheme.bodyMedium),
+              TextSpan(text: '${text1.tr} ? ', style: Theme.of(context).textTheme.bodyMedium),
               TextSpan(
                 text: text2.tr,
-                style: Theme.of(context).textTheme.titleLarge!.apply(color: aFacebookBgColor),
+                style: Theme.of(context).textTheme.titleLarge!.apply(color: aPrimaryColor),
               ),
             ],
           ),
