@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourism/src/common_widgets/buttons/button_loading_widget.dart';
+import 'package:exploring/src/common_widgets/buttons/button_loading_widget.dart';
 
 class APrimaryButton extends StatelessWidget {
   const APrimaryButton({

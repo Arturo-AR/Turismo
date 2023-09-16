@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tourism/src/constants/colors.dart';
-import 'package:tourism/src/constants/text_strings.dart';
+import 'package:exploring/src/constants/colors.dart';
+import 'package:exploring/src/constants/text_strings.dart';
 
 class AFormDividerWidget extends StatelessWidget {
   const AFormDividerWidget({

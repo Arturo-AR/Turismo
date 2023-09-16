@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourism/src/constants/colors.dart';
+import 'package:exploring/src/constants/colors.dart';
 
 class AElevatedButtonTheme {
   AElevatedButtonTheme._(); //To avoid creating instances

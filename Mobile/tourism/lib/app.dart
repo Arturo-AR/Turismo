@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tourism/src/features/authentication/screens/splash_screen/splash_screen.dart';
-import 'package:tourism/src/utils/theme/theme.dart';
+import 'package:exploring/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:exploring/src/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

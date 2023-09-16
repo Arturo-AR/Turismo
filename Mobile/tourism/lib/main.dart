@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tourism/app.dart';
+import 'package:exploring/app.dart';
 
 Future<void> main() async {
   //WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

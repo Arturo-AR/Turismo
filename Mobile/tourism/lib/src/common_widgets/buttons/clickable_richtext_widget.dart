@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tourism/src/constants/colors.dart';
+import 'package:exploring/src/constants/colors.dart';
 
 class ClickableRichTextWidget extends StatelessWidget {
   const ClickableRichTextWidget({

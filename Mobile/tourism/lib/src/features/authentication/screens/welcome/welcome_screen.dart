@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tourism/src/constants/colors.dart';
-import 'package:tourism/src/constants/images_strings.dart';
-import 'package:tourism/src/constants/text_strings.dart';
-import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
-import 'package:tourism/src/features/authentication/screens/singup/signup_screen.dart';
-import 'package:tourism/src/features/core/screens/places_screen.dart';
+import 'package:exploring/src/constants/colors.dart';
+import 'package:exploring/src/constants/images_strings.dart';
+import 'package:exploring/src/constants/text_strings.dart';
+import 'package:exploring/src/features/authentication/screens/login/login_screen.dart';
+import 'package:exploring/src/features/authentication/screens/singup/signup_screen.dart';
+import 'package:exploring/src/features/core/screens/places_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

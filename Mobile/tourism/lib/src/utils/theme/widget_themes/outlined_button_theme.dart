@@ -1,6 +1,6 @@
 /* -- Light & Dark Outlined Button Themes -- */
 import 'package:flutter/material.dart';
-import 'package:tourism/src/constants/colors.dart';
+import 'package:exploring/src/constants/colors.dart';
 
 class AOutlinedButtonTheme {
   AOutlinedButtonTheme._(); //To avoid creating instances

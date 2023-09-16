@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aranapp.tourism">
    <application
-        android:label="tourism"
+        android:label="Exploring"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

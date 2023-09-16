@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tourism/src/common_widgets/buttons/clickable_richtext_widget.dart';
-import 'package:tourism/src/common_widgets/form/form_divider_widget.dart';
-import 'package:tourism/src/common_widgets/form/form_header_widget.dart';
-import 'package:tourism/src/common_widgets/form/social_footer.dart';
-import 'package:tourism/src/constants/images_strings.dart';
-import 'package:tourism/src/constants/text_strings.dart';
-import 'package:tourism/src/features/authentication/screens/login/login_screen.dart';
-import 'package:tourism/src/features/authentication/screens/singup/widgets/signup_form_widget.dart';
+import 'package:exploring/src/common_widgets/buttons/clickable_richtext_widget.dart';
+import 'package:exploring/src/common_widgets/form/form_header_widget.dart';
+import 'package:exploring/src/constants/images_strings.dart';
+import 'package:exploring/src/constants/text_strings.dart';
+import 'package:exploring/src/features/authentication/screens/login/login_screen.dart';
+import 'package:exploring/src/features/authentication/screens/singup/widgets/signup_form_widget.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);

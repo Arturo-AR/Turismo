@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tourism/src/common_widgets/buttons/clickable_richtext_widget.dart';
-import 'package:tourism/src/common_widgets/buttons/social_button.dart';
-import 'package:tourism/src/constants/colors.dart';
-import 'package:tourism/src/constants/images_strings.dart';
-import 'package:tourism/src/constants/text_strings.dart';
+import 'package:exploring/src/common_widgets/buttons/clickable_richtext_widget.dart';
+import 'package:exploring/src/common_widgets/buttons/social_button.dart';
+import 'package:exploring/src/constants/colors.dart';
+import 'package:exploring/src/constants/images_strings.dart';
+import 'package:exploring/src/constants/text_strings.dart';
 
 class SocialFooter extends StatelessWidget {
   const SocialFooter({
