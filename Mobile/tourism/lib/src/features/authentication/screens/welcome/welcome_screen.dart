@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:exploring/src/features/core/models/place_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:exploring/src/constants/colors.dart';
@@ -20,76 +22,101 @@ class WelcomeScreen extends StatelessWidget {
     var height = mediaQuery.size.height;
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
+    final list = PlaceModel.list;
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: isDarkMode ? aSecondaryColor : aBackGroundColor,
         //backgroundColor: aBackGroundColor,
-        body: Stack(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Hero(
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Hero(
                       tag: 'welcome-image-tag',
                       child: Image(
                           image: const AssetImage(aAppImage),
                           width: width * 0.7,
-                          height: height * 0.4)),
-                  Column(
-                    children: [
-                      Text(aWelcomeTitle,
-                          style: Theme.of(context).textTheme.displayMedium),
-                      Text(aWelcomeSubTitle,
-                          style: Theme.of(context).textTheme.bodyLarge,
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: OutlinedButton(
-                              onPressed: () => Get.to(() => const LoginScreen()),
+                          height: height * 0.3),
+                    ),
+                    CarouselSlider.builder(
+                      itemCount: list.length,
+                      itemBuilder: (context, index, realIndex) {
+                        final urlImage = list[index].image;
+                        return buildImage(urlImage, index);
+                      },
+                      options: CarouselOptions(height: 250),
+                    ),
+                    const SizedBox(height: 20,),
+                    Column(
+                      children: [
+                        Text(aWelcomeTitle,
+                            style: Theme.of(context).textTheme.displayMedium),
+                        Text(aWelcomeSubTitle,
+                            style: Theme.of(context).textTheme.bodyLarge,
+                            textAlign: TextAlign.center),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: OutlinedButton(
+                                onPressed: () =>
+                                    Get.to(() => const LoginScreen()),
+                                //onPressed: () {},
+                                child: Text(aLogin.toUpperCase()),
+                              ),
+                            ),
+                            const SizedBox(width: 10.0),
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: () =>
+                                    Get.to(() => const SignupScreen()),
+                                //onPressed: () {},
+                                child: Text(aSignup.toUpperCase()),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () =>
+                                  Get.offAll(() => const PlacesScreen()),
                               //onPressed: () {},
-                              child: Text(aLogin.toUpperCase()),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: Text(aGuest.toUpperCase()),
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 10.0),
-                          Expanded(
-                            child: ElevatedButton(
-                              onPressed: () => Get.to(() => const SignupScreen()),
-                              //onPressed: () {},
-                              child: Text(aSignup.toUpperCase()),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () => Get.offAll(() => const PlacesScreen()),
-                            //onPressed: () {},
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                              child: Text(aGuest.toUpperCase()),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+Widget buildImage(String url, int index) => Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: Image.asset(
+        url,
+        fit: BoxFit.cover,
+      ),
+    );
