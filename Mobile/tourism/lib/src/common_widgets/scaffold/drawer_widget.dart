@@ -1,5 +1,7 @@
 import 'package:exploring/src/constants/colors.dart';
+import 'package:exploring/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ANavigationDrawer extends StatelessWidget {
   const ANavigationDrawer({Key? key}) : super(key: key);
@@ -30,7 +32,9 @@ class ANavigationDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text("LogOut"),
-            onTap: () {},
+            onTap: () {
+              Get.to(() => const WelcomeScreen());
+            },
           ),
         ],
       ),

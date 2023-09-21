@@ -22,7 +22,8 @@ class WelcomeScreen extends StatelessWidget {
     var height = mediaQuery.size.height;
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
-    final list = PlaceModel.list;
+    //final list = PlaceModel.list;
+    final listNetwork = PlaceModel.listNetwork;
 
     return SafeArea(
       child: Scaffold(
@@ -44,14 +45,22 @@ class WelcomeScreen extends StatelessWidget {
                           height: height * 0.3),
                     ),
                     CarouselSlider.builder(
-                      itemCount: list.length,
+                      itemCount: listNetwork.length,
                       itemBuilder: (context, index, realIndex) {
-                        final urlImage = list[index].image;
+                        final urlImage = listNetwork[index].image;
                         return buildImage(urlImage, index);
                       },
-                      options: CarouselOptions(height: 250),
+                      options: CarouselOptions(
+                        height: 250,
+                        autoPlay: true,
+                        autoPlayAnimationDuration: const Duration(milliseconds: 4000),
+                        autoPlayInterval: const Duration(milliseconds: 4000),
+                        autoPlayCurve: Curves.linear
+                      ),
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Column(
                       children: [
                         Text(aWelcomeTitle,
@@ -115,7 +124,7 @@ class WelcomeScreen extends StatelessWidget {
 
 Widget buildImage(String url, int index) => Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      child: Image.asset(
+      child: Image.network(
         url,
         fit: BoxFit.cover,
       ),
