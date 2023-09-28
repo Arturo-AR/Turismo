@@ -94,7 +94,7 @@ class LoginFormWidget extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.offAll(() => const PlacesScreen()),
+                onPressed: () => Get.offAll(() => PlacesScreen()),
                 child: Text(aLogin.tr.toUpperCase()),
               ),
             )

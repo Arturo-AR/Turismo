@@ -1,11 +1,14 @@
 import 'package:exploring/src/common_widgets/scaffold/app_bar_widget.dart';
 import 'package:exploring/src/common_widgets/scaffold/drawer_widget.dart';
 import 'package:exploring/src/constants/colors.dart';
+import 'package:exploring/src/features/core/controllers/qr_scanner_controller.dart';
 import 'package:exploring/src/features/core/models/place_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PlacesScreen extends StatelessWidget {
-  const PlacesScreen({Key? key}) : super(key: key);
+  PlacesScreen({Key? key}) : super(key: key);
+  final controller = Get.put(QrScannerController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,9 @@ class PlacesScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           backgroundColor: isDark ? aPrimaryColor : aSecondaryColor,
           foregroundColor: isDark ? aDarkColor : aWhiteColor,
-          onPressed: () {},
+          onPressed: () {
+            controller.scanQR();
+          },
           child: const Icon(Icons.qr_code_scanner),
         ),
         body: GridView.builder(

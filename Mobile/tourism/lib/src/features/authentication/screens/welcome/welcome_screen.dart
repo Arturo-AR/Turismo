@@ -99,7 +99,7 @@ class WelcomeScreen extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () =>
-                                  Get.offAll(() => const PlacesScreen()),
+                                  Get.offAll(() => PlacesScreen()),
                               //onPressed: () {},
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
