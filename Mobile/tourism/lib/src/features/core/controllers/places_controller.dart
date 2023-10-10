@@ -1,21 +1,12 @@
-import 'package:exploring/src/constants/images_strings.dart';
+import 'package:exploring/src/features/core/models/place_model.dart';
+import 'package:get/get.dart';
 
-class PlaceModel {
-  final String image;
-  final String title;
-  final String qrCode;
-  final String description;
-  bool discovered;
+class PlacesController extends GetxController {
+  static PlacesController get instance => Get.find();
+  String scannedQrCode = '';
 
-  PlaceModel(
-    this.image,
-    this.title,
-    this.qrCode,
-    this.description,
-    this.discovered,
-  );
 
-  static List<PlaceModel> listNetwork = [
+  var  listNetwork = <PlaceModel>[
     PlaceModel(
         "https://blog.vivaaerobus.com/wp-content/uploads/2020/08/que-hacer-en-yucatan.jpg",
         "Piramide del sol",
@@ -63,5 +54,10 @@ class PlaceModel {
         "PDT",
         "Plaza de toros de huandacareo",
         true),
-  ];
+  ].obs;
+
+  void unLockPlace(int index, bool unLocked)  {
+    listNetwork[index].discovered = unLocked;
+  }
+
 }

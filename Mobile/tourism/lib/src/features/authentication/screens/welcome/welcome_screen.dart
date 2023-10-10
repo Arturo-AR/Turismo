@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:exploring/src/features/core/controllers/qr_scanner_controller.dart';
 import 'package:exploring/src/features/core/models/place_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

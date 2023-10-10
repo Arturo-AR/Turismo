@@ -17,6 +17,7 @@ const String aFullName = "Nombre Completo";
 const String aGetStarted = "Empezar";
 const String aForgetPassword = "Olvidaste tu contraseña?";
 const String aSignInWithGoogle = "Inicia Sesion con Google";
+const String aLockedImage = "https://previews.123rf.com/images/janista/janista1612/janista161200032/68366583-casa-de-hu%C3%A9spedes-la-silueta-negro-icono-del-vector.jpg";
 
 // -- Welcome Screen Text
 const String aWelcomeTitle = "Explora el mundo entero !";
