@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class PlacesController extends GetxController {
   static PlacesController get instance => Get.find();
   String scannedQrCode = '';
-
+  var placeDetail = -1.obs;
 
   var  listNetwork = <PlaceModel>[
     PlaceModel(
