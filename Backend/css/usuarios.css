@@ -1,0 +1,56 @@
+.contenedor-total-tabla-usuarios {
+    border: 1px solid #E4E4EF;
+}
+
+.titulo-tabla-coluna-usuarios {
+    background-color: #F7F7F8;
+    color: #575F6E;
+}
+
+.contenedor-tabla-columna-usuarios {
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor-columna-usuarios-descripcion {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-tabla-columna-usuarios-descripcion {
+    color: #9A9EA5;
+    margin: 0%;
+}
+
+.avatar-usuarios {
+    height: 100%;
+}
+
+.btn-icono-forma {
+    background-color: transparent;
+    border: none;
+    padding: 0%;
+}
+
+.span-tabla-status-inactivo {
+    background: #FFF0F0;
+    border-radius: 12px;
+    color: #F93232;
+    height: 28px;
+    padding: 4px 24px;
+    width: 93px;
+}
+
+.span-tabla-status-activo {
+    background: #EBF6EB;
+    border-radius: 12px;
+    color: #31AA27;
+    height: 28px;
+    padding: 4px 24px;
+    width: 93px;
+}
+
+.users-action-btn-wrapper {
+    width: 50px;
+    align-items: center;
+}

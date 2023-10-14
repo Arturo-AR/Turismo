@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter/Inter-Medium.ttf");
+}
+
+* {
+    font-family: "Inter";
+}
+
+.celda-titulo {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.basic-icon-sort-actividades {
+    background-image: url(../assets/icons/sort-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 6px !important;
+    display: flex;
+    height: 24px;
+    margin: 0px;
+    width: 24px;
+}
+
+.titulo-pagina-actual-actividades {
+    color: #70768C;
+}
+
+/* tabs */
+.nav-tab-actividades,
+.nav-item-actividades a {
+    color: #9a9ea5;
+}
+
+.nav-tabs-actividades .nav-item-actividades.show .nav-link-actividades,
+.nav-tabs-actividades .nav-link-actividades.active {
+    background-color: #fff;
+    border-color: #fff #fff #1b59f8 #fff;
+    border-width: 2px;
+    color: #242731;
+}
+
+.nav-tabs-actividades .nav-link-actividades:hover {
+    background-color: #ededfc !important;
+    -webkit-transition: background 0.250s ease-out;
+    -moz-transition: background 0.250s ease-out;
+    -o-transition: background 0.250s ease-out;
+    transition: background 0.250s ease-out;
+    color: #0b83d9;
+}
+
+/* tablas */
+.contenedor-total-tabla-actividades {
+    border-collapse: collapse;
+    border: 1px solid #E4E4EF;
+    table-layout: fixed;
+}
+
+.titulo-tabla-actividades-columna {
+    background-color: #F7F7F8;
+    color: #575F6E;
+}
+
+.texto-tabla-actividades-estilo {
+    color: #9A9EA5;
+}
+
+.contenedor-tabla-act-col-fecha {
+    align-items: end;
+    column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor-col-contenido-actividades {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-texto-tabla-ancho-actividades {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+
+.td-col-tabla-actividades {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contenedor-td-centrar-actividades {
+    width: 70px;
+    text-align: center;
+}

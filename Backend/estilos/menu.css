@@ -1,0 +1,257 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../assets/fonts/Inter/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../assets/fonts/Inter/Inter-Regular.ttf);
+}
+
+body {
+  background-color: #ddd;
+  font-family: Inter-Regular;
+}
+
+.logo{
+	height: 35px;
+}
+
+#menu ul li {
+    background-color:#343a40;
+}
+
+#menu ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu ul a {
+  display: block;
+  color: #B5DBF9;
+  text-decoration: none;
+  font-weight:400;
+  font-size:15px;
+  padding:10px;
+  letter-spacing:1px;
+  font-family: Ubuntu-Regular;
+}
+
+#menu ul a:hover {
+  background:#043351;
+  color: #fff;
+}
+
+#menu ul li {
+  position:relative;
+  float:right;
+  margin:0;
+  padding:0;
+}
+
+#menu ul li:hover {
+  background:#043351;
+  color: #fff;
+}
+
+#menu ul ul {
+  top:100%;
+  left:-140;
+  padding:0;
+}
+
+#menu ul ul li {
+  float:none;
+  width:280px;
+}
+
+#menu ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+}
+
+#menu ul li:hover > ul {
+  display:block;
+}
+
+section {
+	background-size: cover;
+	background-position: center center;
+}
+
+section h1 {
+	color: #000;
+	text-align: center;
+	font-family: Inter-Regular;
+}
+
+section h3 {
+	color: #000;
+	font-size: 25px;
+	text-align: center;
+	font-family: Inter-Regular;
+}
+
+section h4 {
+	color: #000;
+	font-size: 20px;
+	text-align: center;
+	font-family: Inter-Regular;
+}
+
+.formularioAltaUsuario input {
+	border-radius: 5px;
+	width: 100%;
+	height: 30px;
+}
+
+.formularioAltaUsuario select {
+	border-radius: 5px;
+	width: 100%;
+	height: 30px;
+}
+
+.modal-header {
+  float: right;
+  padding: 5px;
+  background: #D0D9DD;
+}
+
+.modal-header:hover {
+  transition: .3s;
+}
+
+.modalMensaje {
+  background: #D0D9DD;
+  color: #000;
+  font-family: Inter-Regular;
+  padding: 10px;
+}
+
+.modal-body .texto-mensaje,
+.modal-body .text-modal {
+	font-size: 16px;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.modal-descript {
+  margin: 0px;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.avisoEditar p {
+  font-size: 20px;
+  color: #000;
+}
+
+.boxFile {
+  width: 100%;
+  border: 1px solid #000;
+  background: #04592D;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.boxFile:hover {
+	cursor: pointer;
+	background: #2FB570;
+	color: #000;
+}
+
+.mensajeExcel label {
+	font-size: 30px;
+}
+
+.divInstrucciones {
+  width: 100%;
+}
+
+.form-btn-popup {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #167DFA;
+  color: #000;
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-btn-popup:hover {
+  background-color: #061653;
+  color: #000;
+  text-shadow: none;
+  transition: all .4s;
+}
+
+.btnCerrarSesionCancelar {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  background-color: #733333;
+  color: #000;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btnCerrarSesionCancelar:hover {
+  background-color: #3B0000;
+  color: #000;
+  text-shadow: none;
+}
+
+.btnCerrarSesionSi {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  background-color: #167DFA;
+  color: #000;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btnCerrarSesionSi:hover {
+  background-color: #061653;
+  text-shadow: none;
+  color: #000;
+}
+
+@media screen and (max-width:1200px) {
+  body{
+    background-color: #ddd, !important;
+    background-size: 120% 200% !important;
+  }
+}
+
+@media screen and (min-width:361px) {
+  #menu ul ul ul li {
+    position: relative;
+    left:-280px;
+    bottom: 38px;
+  }
+}

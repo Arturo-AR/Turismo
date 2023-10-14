@@ -1,0 +1,55 @@
+.contenedor-total-tabla-empresas {
+    border: 1px solid #e4e4ef;
+}
+
+.titulo-tabla-coluna-empresas {
+    background-color: #f7f7f8;
+    color: #575F6E;
+}
+
+.celda-centrada{
+    display: flex;
+    justify-content: center;
+}
+
+.space-buttons{
+    padding: 10px;
+}
+
+.contenedor-col-contenido-empresas {
+    display: flex;
+    flex-direction: column;
+}
+
+.td-col-ancho-texto-largo-empresas {
+    width: 300px;
+}
+
+.td-col-ancho-texto-corto-empresas {
+    width: 200px;
+}
+
+.col-span-tabla-ancho-texto-corto-empresas {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 145px;
+}
+
+.col-span-tabla-ancho-texto-largo-empresas {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+
+.contenedor-col-btns-empresas {
+    column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+}

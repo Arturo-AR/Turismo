@@ -1,0 +1,37 @@
+.footer{
+  background: #152F4F;
+  color:white;
+  font-family: Ubuntu-Regular;
+  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf');
+ }
+
+ #footer-title{
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 0.3rem 0;
+    color: #fff;
+}
+
+.links ul{
+    list-style-type: none;
+}
+
+.links li a{
+    color: white;
+    transition: color .2s;
+}
+
+.links li a:hover{
+    text-decoration:none;
+    color:#4180CB;
+}  
+
+.location p{
+    font-size: 18px;
+    color: #fff;
+}
+
+.copyright p{
+    border-top:1px solid rgba(255,255,255,.1);
+} 
