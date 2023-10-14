@@ -12,14 +12,20 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^4.0.4
+
   ## -- ICON PACKAGES
   cupertino_icons: ^1.0.2
+  line_awesome_flutter: ^2.0.0
 
   ## -- STATE MANAGEMENT
   get: ^4.6.5
-  line_awesome_flutter: ^2.0.0
-  carousel_slider: ^4.2.1
+  get_storage: ^2.1.1
+
+  ## -- QR SCANNER
   flutter_barcode_scanner: ^2.0.0
+
+  ## -- OTHERS
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

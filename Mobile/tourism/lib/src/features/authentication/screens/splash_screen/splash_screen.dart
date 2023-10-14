@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    controller.startTransition();
+    //controller.startTransition(); // se comento esta linea
     return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
