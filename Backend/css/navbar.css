@@ -1,0 +1,186 @@
+/* Navigation Bar */
+@font-face {
+    font-family: Inter-Regular;
+    src: url(../assets/fonts/Inter/Inter-Regular.ttf);
+}
+
+.logo{
+    display: inline-block;
+    height: 50px;
+    left: 44px;
+    top: 28px;
+    width: 289px;
+}
+
+.vector {
+    font-size: larger;
+    padding-right: 50px;
+}
+
+.vector:hover {
+    background-color: transparent !important;
+}
+
+#menu {
+    align-items: center;
+    background: #f2f2f2;
+    box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 104px;
+    left: 0px;
+    margin-bottom: 40px;
+    top: 0px;
+    width: 100%;
+}
+
+#menu ul li , .vector , .cerrar-session{
+    background-color:#fff;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul a , .cerrar-session {
+    color: #242731;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+#menu ul li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+#menu ul li:hover {
+    background-color: #ededfc;
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-transition: background 0.250s ease-out;
+    -moz-transition: background 0.250s ease-out;
+    -o-transition: background 0.250s ease-out;
+    transition: background 0.250s ease-out;
+}
+
+#menu ul li:hover a.item-menu {
+    color: #1b59f8;
+    -webkit-transition: color 0.250s ease-out;
+    -moz-transition: color 0.250s ease-out;
+    -o-transition: color 0.250s ease-out;
+    transition: color 0.250s ease-out;
+}
+
+.dropdown-submenu:hover {
+    background-color: transparent !important;
+    -webkit-transition: background 0.250s ease-out;
+    -moz-transition: background 0.250s ease-out;
+    -o-transition: background 0.250s ease-out;
+    transition: background 0.250s ease-out;
+}
+
+.dropdown-submenu:hover a:hover {
+    background-color: transparent !important;
+    color: #1b59f8 !important;
+    -webkit-transition: background, color 0.250s ease-out;
+    -moz-transition: background, color 0.250s ease-out;
+    -o-transition: background, color 0.250s ease-out;
+    transition: background, color 0.250s ease-out;
+}
+
+#menu ul ul {
+    padding: 0;
+}
+
+.icon{
+    height: 100%;
+    padding-top: 1px;
+    width: 100%;
+}
+
+#menu ul ul li {
+    display: flex;
+    width: 280px;
+}
+
+#menu ul ul li a {
+    display: flex;
+    width: 280px;
+}
+
+#menu ul li:hover > ul {
+    background-color: #ededfc;
+    border-top-left-radius: 0px;
+    border: 1px solid #ededfc;
+    display: block;
+    overflow: hidden;
+    -webkit-transition: background-color 0.250s ease-out;
+    -moz-transition: background-color 0.250s ease-out;
+    -o-transition: background-color 0.250s ease-out;
+    transition: background-color 0.250s ease-out;
+}
+
+.cerrar-session{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cerrar-session-icon {
+    background-image: url(../assets/icons/sign-out.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 24px;
+    margin-right: 5px;
+    width: 24px;
+}
+
+#menu ul li.cerrar-session:hover a .cerrar-session-icon {
+    background-image: url(../assets/icons/sign-out-active.png);
+    -webkit-transition: background 0.250s ease-out;
+    -moz-transition: background 0.250s ease-out;
+    -o-transition: background 0.250s ease-out;
+    transition: background 0.250s ease-out;
+}
+
+#menu ul li.cerrar-session:hover a span {
+    color: #1b59f8
+}
+
+#menu ul li.cerrar-session a {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+a.nav-link.dropdown-toggle.item-menu::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    border-left-width: 0.35em;
+    border-right-width: 0.35em;
+    border-top-width: 0.35em;
+    transform: rotateZ(270deg);
+    -webkit-transition: transform 0.250s ease-out;
+    -moz-transition: transform 0.250s ease-out;
+    -o-transition: transform 0.250s ease-out;
+    transition: transform 0.250s ease-out;
+}
+
+.nav-item:hover .dropdown-toggle.item-menu::after {
+    transform: rotateZ(360deg);
+}

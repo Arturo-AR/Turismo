@@ -1,0 +1,153 @@
+.panel-info {
+    border-color: #09B7CC;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.panel-info .panel-heading {
+    color: #fff;
+    background-color: #053971;
+    border-color: #09B7CC;
+    text-align: center;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-centrar {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.row,
+.row-fluid {
+    margin-bottom: 30px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #000;
+}
+
+table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 1330px;
+
+}
+
+td {
+    padding: 8px;
+    min-width: 85px;
+
+}
+
+th {
+    padding: 8px;
+}
+
+thead {
+    margin-top: 20px;
+    background-color: #000;
+    color: white;
+}
+
+tr td {
+    display: flex;
+    word-wrap: break-word;
+    color: #242426;
+    justify-content: center;
+    max-width: 189px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.titulosh3 h3 {
+    color: #000;
+    text-align: left;
+    font-size: 20px;
+}
+
+.boxFile button.cargarArchivo {
+    background: #ddd;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 23px;
+    padding: 5px;
+}
+
+.boxFile button.cargarArchivo:hover {
+    background: #000;
+    border: 1px solid #048146;
+    color: #fff;
+}
+
+.boxFile button.cargarArchivo span {
+    background-size: 20px;
+    margin-left: 10px;
+}
+
+.boxFile button span.btnCargar {
+    background-image: url("../iconos/subir.png");
+}
+
+.boxFile button span {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    padding-left: 20px;
+}
+
+.boxFile button span.btnCargado {
+    background-image: url("../iconos/confirmacion.png");
+}
+
+.boxFile button {
+    background: #ddd;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.boxFile button span {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    padding-left: 20px;
+}
+
+.formularioCamposOcultos,
+.formularioCamposOcultos input {
+    display: none;
+}

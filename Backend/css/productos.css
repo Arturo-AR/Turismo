@@ -1,0 +1,65 @@
+.basic-icon-importar-productos {
+    background-image: url(../assets/icons/upload.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 6px !important;
+    display: flex;
+    height: 24px;
+    width: 24px;
+}
+
+.btn-importar-producto {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #D4D4D4;
+    column-gap: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    line-height: 18px;
+}
+
+.btn-importar-producto:hover {
+    background-color: #ededfc !important;
+    -webkit-transition: background 0.250s ease-out;
+    -moz-transition: background 0.250s ease-out;
+    -o-transition: background 0.250s ease-out;
+    transition: background 0.250s ease-out;
+}
+
+.contenedor-total-tabla-productos {
+    border: 1px solid #E4E4EF;
+}
+
+.tabla-productos-columna-borde-derecho {
+    border-right: 1px solid #E4E4EF;
+}
+
+.tabla-productos-columna-borde-izquierdo {
+    border-left: 1px solid #E4E4EF;
+}
+
+.titulo-tabla-coluna-productos {
+    background-color: #F7F7F8;
+    color: #575F6E;
+}
+
+.tabla-productos-columna-anchura {
+    width: 117px;
+}
+
+.contenedor-tabla-columna-exitencia-iconos-productos {
+    column-gap: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.centrar-contendido-tabla-productos {
+    text-align: center;
+}
+
+.texto-tabla-columna-productos-clave {
+    color: #9A9EA5;
+}

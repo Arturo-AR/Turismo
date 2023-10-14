@@ -1,0 +1,63 @@
+.contenedor-total-tabla-clientes {
+    border: 1px solid #e4e4ef;
+}
+
+.titulo-tabla-coluna-clientes {
+    background-color: #f7f7f8;
+    color: #575f6e;
+}
+
+.texto-tabla-columna-clientes-descripcion {
+    color: #9a9ea5;
+    margin: 0%;
+}
+
+#js-editar-rfc-cliente {
+    text-transform: uppercase;
+}
+
+.contenedor-col-contenido-clientes {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-span-tabla-ancho-texto-corto-clientes {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+
+.col-span-tabla-ancho-texto-largo-clientes {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+}
+
+.td-col-ancho-texto-largo-clientes {
+    width: 324px;
+}
+
+.td-col-ancho-texto-corto-clientes {
+    width: 200px;
+}
+
+.td-col-tabla-clientes {
+    background: white;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contenedor-col-btns-clientes {
+    column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+}
