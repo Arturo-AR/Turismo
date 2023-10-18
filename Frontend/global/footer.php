@@ -1,28 +1,11 @@
-
     </div>
-    <footer></footer>
+    
   </body>
 </html>
 <?php
-require_once("../popups/popup_pagar_parcialidades.php");
-require_once("../popups/popup_alta_emplazamiento.php");
-require_once("../popups/popup_operaciones_notificadores.php");
-require_once("../popups/popup_convenio_ratificacion.php");
-require_once("../popups/popup_terminar_audiencia.php");
-require_once("../popups/popup_terminar_solicitud_candidato.php");
-require_once("../popups/popup_agendar_ratificacion.php");
-require_once("../popups/popup_cambiar_contrasena.php");
-require_once("../popups/popup_confirmacion.php");
-require_once("../popups/popup_mensaje_recargar.php");
-require_once("../popups/popup_editar_usuario.php");
-require_once("../popups/popup_editar_audiencia.php");
-require_once("../popups/popup_editar_solicitud.php");
-require_once("../popups/popup_alta_solicitud_solicitante.php");
-require_once("../popups/popup_alta_usuario.php");
-require_once("../popups/popup_alta_solicitante.php");
-require_once("../popups/popup_alta_ratificacion_recepcion.php");
-require_once("../popups/popup_editar_solicitante.php");
+// require_once("../popups/popup_confirmacion.php");
+// require_once("../popups/popup_mensaje_recargar.php");
 require_once("../popups/popup_mensaje.php");
-require_once("../popups/popup_cerrar_sesion.php");
-require_once("../popups/popup_message_overlay.php");
+// require_once("../popups/popup_cerrar_sesion.php");
+// require_once("../popups/popup_message_overlay.php");
 ?>

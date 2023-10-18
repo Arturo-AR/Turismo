@@ -66,10 +66,10 @@
                 </div>
 
                 <form>
-                  <p>Inicia Sesion</p>
+                  <p>Inicia Sesión</p>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="correoUsuarioAlta">Correo Electronico</label>
+                    <label class="form-label" for="correoUsuarioAlta">Correo Electrónico</label>
                     <input type="email" name="correoUsuarioAlta" id="correoUsuarioAlta" class="form-control" placeholder="Ingresa tu correo electronico" />
                   </div>
 
@@ -95,9 +95,10 @@
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                     <h4 class="mb-4">Explorando Rincones</h4>
-                    <p class="small mb-0">Adentrate en el mundo de la busqueda y de la diversion, explorando lugares
-                    los cuales no conoces. Exploring hace que tus visitas turisticas sean mas divertidas 
-                    descubriendo nuevos lugares y a mostrarte un poco de su historia.</p>
+                    <p class="small mb-0">Adéntrate en el mundo de la búsqueda y de la diversión, explorando lugares los cuales no conoces. 
+                      Exploring hace que tus visitas turísticas sean más divertidas, 
+                      descubriendo nuevos lugares y mostrarte un poco de su historia.
+                    </p>
               </div>
             </div>
           </div>
@@ -120,60 +121,60 @@
 <script>
     // FUNCION LOGIN
     function loginUsuario(){
-        var correo = $("#correoUsuarioAlta").val();
-        var password = $("#passwordUsuarioAlta").val();
+      var correo = $("#correoUsuarioAlta").val();
+      var password = $("#passwordUsuarioAlta").val();
 
-        if (correo == "") {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Correo electronico no puede ir vacio',
-                // footer: '<a href="">Why do I have this issue?</a>'
-            })
-            return false;
+      if (correo == "") {
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Correo electronico no puede ir vacio',
+              // footer: '<a href="">Why do I have this issue?</a>'
+          })
+          return false;
+      }
+
+      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      if (!emailPattern.test(correo)) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Formato del correo electronico incorrecto.',
+              // footer: '<a href="">Why do I have this issue?</a>'
+          })
+          return false;
+      }
+
+      if (password == "") {
+          Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Contraseña no puede ir vacio',
+              // footer: '<a href="">Why do I have this issue?</a>'
+          })
+          return false;
+      }
+
+      showMessageOverlay("VALIDANDO USUARIO...", "images/cargando.gif", "200", "200", "sending");
+      $.ajax({
+        method:"POST",
+        url:"Backend/backend/backend_login.php",
+        data:json_data,
+        success:function(data){
+          var respuesta = JSON.parse(data);
+          if(respuesta["codigo"] == "fallo"){
+            $("#correoUsuarioAlta").val("");
+            $("#passwordUsuarioAlta").val("");
+            closeMessageOverlay()
+          }
+          else if(respuesta["codigo"] == "exito"){
+            window.location = ("forms/");
+            $("#correoUsuarioAlta").val("");
+            $("#passwordUsuarioAlta").val("");
+            closeMessageOverlay();
+          }
         }
-
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-        if (!emailPattern.test(correo)) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Formato del correo electronico incorrecto.',
-                // footer: '<a href="">Why do I have this issue?</a>'
-            })
-            return false;
-        }
-
-        if (password == "") {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Contraseña no puede ir vacio',
-                // footer: '<a href="">Why do I have this issue?</a>'
-            })
-            return false;
-        }
-
-        showMessageOverlay("VALIDANDO USUARIO...", "images/cargando.gif", "200", "200", "sending");
-		$.ajax({
-			method:"POST",
-			url:"backend/backend_login.php",
-			data:json_data,
-			success:function(data){
-				var respuesta = JSON.parse(data);
-				if(respuesta["codigo"] == "fallo"){
-					$("#correoUsuarioAlta").val("");
-					$("#passwordUsuarioAlta").val("");
-					closeMessageOverlay()
-				}
-				else if(respuesta["codigo"] == "exito"){
-                    window.location = ("forms/");
-					$("#correoUsuarioAlta").val("");
-					$("#passwordUsuarioAlta").val("");
-					closeMessageOverlay();
-				}
-			}
-		});
+      });
     }
 </script>

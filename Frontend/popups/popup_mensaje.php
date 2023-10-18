@@ -7,16 +7,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="iconoMensaje">
-          <!-- <i class='bx bx-x-circle'></i> -->
-        </div>
         <p class="textoMensaje"></p>
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="popupBtnCancelar btnCancelar" data-bs-dismiss="modal">Cancelar</button> -->
-
-        <!-- <button type="button" class="popupBtnContinuar">Continuar</button> -->
-
         <button type="button" class="popupBtn" data-bs-dismiss="modal">Aceptar</button>
       </div>
     </div>
