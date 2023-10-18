@@ -35,7 +35,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">Exploring</a>
+        <a class="navbar-brand" href="../">Exploring</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -49,8 +49,8 @@
                 <li><a class="dropdown-item" href="#">Alta Usuarios</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Lugares</a></li>
-            <li class="nav-item"><a class="nav-link" href="#signup">Cerrar sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lugares</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Cerrar sesión</a></li>
           </ul>
         </div>
       </div>
