@@ -19,20 +19,20 @@ if (!isset($backendIncluido)) {
 }
 
 //POST TEST
-$userFirstName      = 'Test';
-$userLastName       = 'Test';
-$userEmail          = 'Test';
-$userPassword       = 'Test';
-$userPhoneNumber    = '1234567890';
-$userAge            = '10';
+// $userFirstName      = 'Test';
+// $userLastName       = 'Test';
+// $userEmail          = 'Test';
+// $userPassword       = 'Test';
+// $userPhoneNumber    = '1234567890';
+// $userAge            = '10';
 
 // $fechaAlta = date('Y/m/d');
-// $userFirstName      = $_POST['userFirstName'];
-// $userLastName       = $_POST['userLastName'];
-// $userEmail          = $_POST['userEmail'];
-// $userPassword       = $_POST['userPassword'];
-// $userPhoneNumber    = $_POST['userPhoneNumber'];
-// $userAge            = $_POST['userAge'];
+$userFirstName      = $_POST['userFirstName'];
+$userLastName       = $_POST['userLastName'];
+$userEmail          = $_POST['userEmail'];
+$userPassword       = $_POST['userPassword'];
+$userPhoneNumber    = $_POST['userPhoneNumber'];
+$userAge            = $_POST['userAge'];
 
 $resultadoRegistrarUsuario = registrarUsuario($dbConnect,$userFirstName,$userLastName,$userEmail,$userPassword,$userPhoneNumber,$userAge);
 $arrayResultados = unirArrays($arrayResultados,$resultadoRegistrarUsuario);

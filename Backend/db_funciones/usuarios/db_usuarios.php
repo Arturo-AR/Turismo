@@ -9,11 +9,11 @@ function inicialRegistro($dbConnect) {
 	return $respuesta;
 }
 
-function inciarSesionUsuario($dbConnect, $campo, $valor, $contrasena) {
+function inciarSesionUsuario($dbConnect, $campo, $valor, $password) {
     $fila = array();
-    $query = 'SELECT * FROM usuarios WHERE '.$campo.' = ? AND password = ? AND eliminado = 0';
+    $query = 'SELECT * FROM users WHERE '.$campo.' = ? AND userPassword = ? AND eliminado = 0';
     $stmt = $dbConnect->prepare($query);
-    $stmt->bind_param('ss', $valor, $contrasena);
+    $stmt->bind_param('ss', $valor, $password);
     $stmt->execute();
     $resultado = $stmt->get_result();
     $fila = $resultado->fetch_assoc();
@@ -31,7 +31,7 @@ function registrarUsuario($dbConnect,$userFirstName,$userLastName,$userEmail,$us
 function obtenerDatosTodosUsuarios($dbConnect) {
     $respuesta = array();
     // $query      = "SELECT * FROM usuarios WHERE eliminado = 0";
-    $query = "SELECT * FROM usuarios";
+    $query = "SELECT * FROM users";
     $stmt = $dbConnect->prepare($query);
     $stmt->execute();
     $resultado = $stmt->get_result();
@@ -41,9 +41,11 @@ function obtenerDatosTodosUsuarios($dbConnect) {
     return $respuesta;
 }
 
-function obtenerDatosUsuario($dbConnect, $campo, $valor) {
+function GetUserInfo($dbConnect, $campo, $valor) {
     $fila = array();
-    $query = 'SELECT usuario as "usuario", password as "password", nombres as "nombres", apellidos as "apellidos", telefono as "telefono", email as "email", idUsuariocategoria as "idUsuarioCategoria", usuario as "usuario" FROM usuarios WHERE '.$campo.' = ?';
+    $query = 'SELECT userFirstName as "userFirstName", userLastName as "userLastName", userEmail as "userEmail", 
+    userPassword as "userPassword", userPhoneNumber as "userPhoneNumber", userAge as "userAge" 
+    FROM users WHERE '.$campo.' = ?';
     $stmt = $dbConnect->prepare($query);
     $stmt->bind_param('s', $valor);
     $stmt->execute();
@@ -52,38 +54,38 @@ function obtenerDatosUsuario($dbConnect, $campo, $valor) {
     return $fila;
 }
 
-function obtenerDatosUsuarioCategoria($dbConnect) {
-    $respuesta = array();
-    $query = 'SELECT * FROM usuario_categoria';
-    $stmt = $dbConnect->prepare($query);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    while ($fila = $resultado->fetch_assoc()) {
-        array_push($respuesta, $fila);
-    }
-    return $respuesta;
-}
+// function obtenerDatosUsuarioCategoria($dbConnect) {
+//     $respuesta = array();
+//     $query = 'SELECT * FROM usuario_categoria';
+//     $stmt = $dbConnect->prepare($query);
+//     $stmt->execute();
+//     $resultado = $stmt->get_result();
+//     while ($fila = $resultado->fetch_assoc()) {
+//         array_push($respuesta, $fila);
+//     }
+//     return $respuesta;
+// }
 
-function actualizarDatosUsuario($dbConnect, $usuario, $password, $nombres, $apellidos, $telefono, $email, $idUsuarioCategoria, $idUsuario) {
-    $fila = array();
-    $query = 'UPDATE usuarios SET usuario = ?, password = ?, nombres = ?, apellidos = ?, telefono = ?, email = ?, idUsuarioCategoria = ? WHERE idUsuario = ?';
+function updateUserInfo($dbConnect, $userFirstName, $userLastName, $userEmail, $userPassword, $userPhoneNumber, $userAge, $userID) {
+    $query = 'UPDATE users SET userFirstName = ?, userLastName = ?, userEmail = ?, userPassword = ?, userPhoneNumber = ?, userAge = ? 
+    WHERE userID = ?';
     $stmt = $dbConnect->prepare($query);
-    $stmt->bind_param('ssssssii', $usuario, $password, $nombres, $apellidos, $telefono, $email, $idUsuarioCategoria, $idUsuario);
+    $stmt->bind_param('sssssii', $userFirstName, $userLastName, $userEmail, $userPassword, $userPhoneNumber, $userAge, $userID);
     return array($stmt->execute());
 }
 
-function eliminarUsuario($dbConnect, $estatus, $idUsuario) {
-    $query = 'UPDATE usuarios SET eliminado = ? WHERE idUsuario = ?';
+function userDelete($dbConnect, $eliminado, $userID) {
+    $query = 'UPDATE users SET eliminado = ? WHERE userID = ?';
     $stmt = $dbConnect->prepare($query);
-    $stmt->bind_param('ii', $estatus, $idUsuario);
+    $stmt->bind_param('ii', $eliminado, $userID);
     return array($stmt->execute());
 }
 
-function cambioContrasenia($dbConnect,$password,$idUsuario) {
-    $query = "UPDATE usuarios SET password = ? WHERE idUsuario = ? ";
-    $stmt = $dbConnect->prepare($query);
-    $stmt->bind_param('si',$password,$idUsuario);
-    return array($stmt->execute());
-}
+// function cambioContrasenia($dbConnect,$password,$idUsuario) {
+//     $query = "UPDATE usuarios SET password = ? WHERE idUsuario = ? ";
+//     $stmt = $dbConnect->prepare($query);
+//     $stmt->bind_param('si',$password,$idUsuario);
+//     return array($stmt->execute());
+// }
 
 ?>

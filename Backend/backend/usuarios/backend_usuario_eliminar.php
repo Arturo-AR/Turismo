@@ -1,10 +1,10 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/db_commited_rolledback.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/utilidades/funciones_utilidades.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/db_log_movimientos.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/db_global.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/administracion/usuarios/db_usuarios.php';
+require_once ("../../db_funciones/db_commited_rolledback.php");
+require_once ("../../utilidades/funciones_utilidades.php");
+require_once ("../../db_funciones/db_log_movimientos.php");
+require_once ("../../db_funciones/db_global.php");
+require_once ("../../db_funciones/usuarios/db_usuarios.php");
 
 if (!isset($backendIncluido)){
     $dbConnect = comenzarConexion();
@@ -13,30 +13,34 @@ if (!isset($backendIncluido)){
     $objetoRespuesta = array();
     $codigo = '';
     $mensaje = '';
-    $fechaOper = date('Y/m/d');
-    $horaOper = date('H:s:i');
-    $usuarioOper = $_POST['idUsuarioOper'];
+    // $fechaOper = date('Y/m/d');
+    // $horaOper = date('H:s:i');
+    // $usuarioOper = $_POST['idUsuarioOper'];
 }
-$idUsuario = $_POST['idUsuario'];
-$estatus = $_POST['estatus'];
-$resultadoObtenerDatos = obtenerDatosUsuario($dbConnect,'idUsuario',$idUsuario);
-$nombreUsuario = $resultadoObtenerDatos['nombres'];
-$usuario = $resultadoObtenerDatos['usuario'];
-// $estatus               = $resultadoObtenerDatos['eliminado'];
+// $userID     = 1;
+// $eliminado  = 1;
 
-if ($estatus == 0) {
-    $estatus = 1;
+$userID = $_POST['userID'];
+$eliminado = $_POST['eliminado'];
+
+$resultGetUserInfo = GetUserInfo($dbConnect,'userID',$userID);
+$nombreUsuario = $resultGetUserInfo['userFirstName'];
+// $usuario = $resultGetUserInfo['usuario'];
+// $estatus               = $resultGetUserInfo['eliminado'];
+
+if ($eliminado == 0) {
+    $eliminado = 1;
 }else {
-    $estatus = 0;
+    $eliminado = 0;
 }
-$resultadoEliminarUsuario = eliminarUsuario($dbConnect, $estatus, $idUsuario);
-$arrayResultados = unirArrays($arrayResultados,$resultadoEliminarUsuario);
+$resultUserDelete = userDelete($dbConnect, $eliminado, $userID);
+$arrayResultados = unirArrays($arrayResultados,$resultUserDelete);
 // LOG DE MOVIMIENTOS
-$idEmpresa = NULL;
-$area = "USUARIOS";
-$detalleMovimiento = $nombreUsuario." Cambió estatus de usuario: ".$usuario;
-$crearLogMovimientos = crearLogMovimientos($dbConnect, $fechaOper, $horaOper, $idUsuario, $usuarioOper, $idEmpresa, $area, $detalleMovimiento);
-$arrayResultados = unirArrays($arrayResultados, $crearLogMovimientos);
+// $idEmpresa = NULL;
+// $area = "USUARIOS";
+// $detalleMovimiento = $nombreUsuario." Cambió estatus de usuario: ".$usuario;
+// $crearLogMovimientos = crearLogMovimientos($dbConnect, $fechaOper, $horaOper, $idUsuario, $usuarioOper, $idEmpresa, $area, $detalleMovimiento);
+// $arrayResultados = unirArrays($arrayResultados, $crearLogMovimientos);
 
 if (!isset($backendIncluido)){
     $ejecutarDb = true;
