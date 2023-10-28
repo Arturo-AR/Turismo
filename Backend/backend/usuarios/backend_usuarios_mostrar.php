@@ -1,8 +1,8 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/db_commited_rolledback.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/utilidades/funciones_utilidades.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/db_global.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/db_funciones/administracion/usuarios/db_usuarios.php';
+require_once ("../../db_funciones/db_commited_rolledback.php");
+require_once ("../../utilidades/funciones_utilidades.php");
+require_once ("../../db_funciones/db_global.php");
+require_once ("../../db_funciones/usuarios/db_usuarios.php");
 
 if (!isset($backendIncluido)) {
     $dbConnect = comenzarConexion();
@@ -15,17 +15,16 @@ if (!isset($backendIncluido)) {
     $horaOper = date('H:s:i');
 }
 
-$idUsuario = $_POST['idUsuario'];
-$resultadoMostrarUsuarios = obtenerDatosUsuario($dbConnect, 'idUsuario', $idUsuario);
-if (!empty($resultadoMostrarUsuarios)) {
-    $objetoRespuesta['datos']['usuario'] = $resultadoMostrarUsuarios['usuario'];
-    $objetoRespuesta['datos']['password'] = $resultadoMostrarUsuarios['password'];
-    $objetoRespuesta['datos']['nombres'] = $resultadoMostrarUsuarios['nombres'];
-    $objetoRespuesta['datos']['apellidos'] = $resultadoMostrarUsuarios['apellidos'];
-    $objetoRespuesta['datos']['telefono'] = $resultadoMostrarUsuarios['telefono'];
-    $objetoRespuesta['datos']['email'] = $resultadoMostrarUsuarios['email'];
-    $objetoRespuesta['datos']['idUsuarioCategoria'] = $resultadoMostrarUsuarios['idUsuarioCategoria'];
-    $objetoRespuesta['datos']['usuario'] = $resultadoMostrarUsuarios['usuario'];
+// $userID = 1;
+$userID = $_POST['userID'];
+$resultShowUser = GetUserInfo($dbConnect, 'userID', $userID);
+if (!empty($resultShowUser)) {
+    $objetoRespuesta['datos']['userFirstName'] = $resultShowUser['userFirstName'];
+    $objetoRespuesta['datos']['userLastName'] = $resultShowUser['userLastName'];
+    $objetoRespuesta['datos']['userEmail'] = $resultShowUser['userEmail'];
+    $objetoRespuesta['datos']['userPassword'] = $resultShowUser['userPassword'];
+    $objetoRespuesta['datos']['userPhoneNumber'] = $resultShowUser['userPhoneNumber'];
+    $objetoRespuesta['datos']['userAge'] = $resultShowUser['userAge'];
 } else {
     $mensaje = "No hay datos de usuario";
     $objetoRespuesta = "";
