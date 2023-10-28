@@ -21,6 +21,7 @@ class AuthenticationRepository extends GetxController {
     userId == null
         ? Get.offAll(() => const WelcomeScreen())
         : Get.offAll(() => PlacesScreen());
+
   }
 
   Future<void> loginWithEmailAndPassword(String email, String password) async {
