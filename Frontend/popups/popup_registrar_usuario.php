@@ -32,7 +32,7 @@
                 <div class="col-md-6">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i></span>
-                        <input type="text" class="form-control" placeholder="Número de teléfono" aria-describedby="basic-addon1" name="telefonoUsuarioAlta" id="telefonoUsuarioAlta">
+                        <input type="text" class="form-control" placeholder="Número de teléfono" aria-describedby="basic-addon1" name="telefonoUsuarioAlta" id="telefonoUsuarioAlta" maxlength="10">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -234,12 +234,21 @@
                 }
                 else if(respuesta["codigo"] == "exito"){
                     $(".btnCancelarUsuarioAlta").click();
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Exito',
+                    //     text: respuesta["mensaje"],
+                    //     // footer: '<a href="">Why do I have this issue?</a>'
+                    // })
                     Swal.fire({
                         icon: 'success',
-                        title: 'Exito',
+                        title: 'Éxito',
                         text: respuesta["mensaje"],
-                        // footer: '<a href="">Why do I have this issue?</a>'
-                    })
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload(); // Recarga la página actual
+                        }
+                    });
                     closeMessageOverlay();
                 }
             }
