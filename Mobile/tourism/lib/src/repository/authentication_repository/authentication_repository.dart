@@ -1,12 +1,23 @@
+import 'package:exploring/src/constants/text_strings.dart';
+import 'package:exploring/src/features/authentication/models/login_request_model.dart';
+import 'package:exploring/src/features/authentication/models/user_model.dart';
 import 'package:exploring/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:exploring/src/features/core/screens/places_screen.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+
 // se agrego este archivo
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
 
-  int? userId;
+  /// Variables
+  late final Rx<User?> _user;
+
+  /// Getters
+  User? get user => _user.value;
+
+  String get getUserID => user?.id ?? "";
 
   /// Loads when app Launch from main.dart
   @override
@@ -23,18 +34,26 @@ class AuthenticationRepository extends GetxController {
         : Get.offAll(() => PlacesScreen());
 
   }
+  /* ---------------------------- Email & Password sign-in ---------------------------------*/
 
+  /// [EmailAuthentication] - LOGIN
   Future<void> loginWithEmailAndPassword(String email, String password) async {
-    userId = 3;
-    await Future.delayed(const Duration(milliseconds: 3000));
-    print("Entro al login en repositorio despues de un segundo");
-    /*try{
-      userId.value = 3;
-      print("Despues de asignar valor");
-      await Future.delayed(const Duration(milliseconds: 3000));
-      print("despues de los 3 segundos");
-    }catch(e){
-      throw e.toString();
-    }*/
+
+    LoginRequest loginRequest = LoginRequest(
+      email,
+      password
+    );
+    try {
+      var res = await http.post(
+        Uri.parse("$baseUrl/exploring.php"),
+        body: loginRequest.toJson(),
+      );
+      if (res.statusCode == 200) {
+        print(res.body.toString());
+      }else {
+        print("error");
+      }
+    } catch (e) {}
+
   }
 }

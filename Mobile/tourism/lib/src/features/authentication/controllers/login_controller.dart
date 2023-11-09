@@ -24,11 +24,9 @@ class LoginController extends GetxController {
         return;
       }
       final auth = AuthenticationRepository.instance;
-      print("Correo: ${email.text.trim()}");
-      print("Password: ${password.text.trim()}");
       await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
-      print(auth.userId);
-      auth.setInitialScreen(auth.userId);
+      //print(auth.userId);
+      //auth.setInitialScreen(auth.userId);
 
     } catch (e) {
       isLoading.value = false;
