@@ -7,13 +7,18 @@ function comenzarConexion($db = 0){
 // Production
 
   if ($db == 0) {
-    $DBName = "exploring";
+    $DBName = "u842376912_exploring_test";
   } else {
     $DBName = $db;
   }
   $DBServer =  "localhost";
-  $DBUser   =  "root";
-  $DBPass   =  "";
+  $DBUser   =  "u842376912_root";
+  $DBPass   =  "kw2=Ec6[q#Z9";
+  
+  
+  //$DBServerLocal =  "localhost";
+  //$DBUserLocal   =  "root";
+  //$DBPassLocal   =  "";
 
   $dbConnect = new mysqli($DBServer, $DBUser, $DBPass, $DBName) or die("Connect failed: %s\n". $dbConnect -> error);
 
