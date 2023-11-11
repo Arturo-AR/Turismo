@@ -47,7 +47,7 @@ class AuthenticationRepository extends GetxController {
           LoginRequest loginRequestBody) =>
       authRemoteDataSource.login(loginRequestBody);
 
-  /*Future<void> loginWithEmailAndPassword(String email, String password) async {
+/*Future<void> loginWithEmailAndPassword(String email, String password) async {
     LoginRequest loginRequest = LoginRequest(email, password);
     try {
       var res = await http.post(

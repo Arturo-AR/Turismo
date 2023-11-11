@@ -8,9 +8,9 @@ class ServerResponse<T> {
 
   ServerResponse(
       {required this.responseCode,
-        required this.responseMessage,
-        this.responseObject,
-        this.respuesta});
+      required this.responseMessage,
+      this.responseObject,
+      this.respuesta});
 
   factory ServerResponse.fromJsonMap(Map<String, dynamic> json) {
     ServerResponse<T> responseServer = ServerResponse(
@@ -23,8 +23,9 @@ class ServerResponse<T> {
 
     if (T == MainServerResponse) {
       responseServer.responseObject =
-      MainServerResponse.fromJsonMap(json['responseobject']) as T?;
-    } /*else if (T == HelpResponse) {
+          MainServerResponse.fromJsonMap(json['responseobject']) as T?;
+    }
+    /*else if (T == HelpResponse) {
       responseServer.responseObject =
       HelpResponse.fromJsonMap(json['responseobject']) as T?;
     } else if (T == ErrorTypeResponse) {

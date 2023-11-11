@@ -4,6 +4,7 @@ import 'package:exploring/src/network/models/server_response.dart';
 import 'package:exploring/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 // se agrego este archivo
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -23,7 +24,8 @@ class LoginController extends GetxController {
     try {
       final auth = AuthenticationRepository.instance;
       //await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
-      LoginRequest loginRequest = LoginRequest(email.text.trim(), password.text.trim());
+      LoginRequest loginRequest =
+          LoginRequest(email.text.trim(), password.text.trim());
 
       auth.login(loginRequest).then((value) {
         //print(auth.userId);
@@ -31,7 +33,6 @@ class LoginController extends GetxController {
       });
       //print(auth.userId);
       //auth.setInitialScreen(auth.userId);
-
     } catch (e) {
       //isLoading.value = false;
       //Helper.errorSnackBar(title: tOhSnap, message: e.toString());
