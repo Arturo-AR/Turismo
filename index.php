@@ -3,11 +3,11 @@
     $needSession = false;
     $home        = true;
 
-    require_once("popups/popup_mensaje.php");
-    require_once("popups/popup_message_overlay.php");
+    require_once("Frontend/popups/popup_mensaje.php");
+    require_once("Frontend/popups/popup_message_overlay.php");
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,15 +20,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Frontend/css/login.css">
+    <link rel="stylesheet" href="Frontend/css/style.css">
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/md5.js"></script>
-    <script src="js/message_overlay.js"></script>
-    <script src="js/utilidades.js"></script>
-    <script src="js/validaciones.js"></script>
+    <script src="Frontend/js/jquery-3.6.0.min.js"></script>
+    <script src="Frontend/js/jquery-ui.js"></script>
+    <script src="Frontend/js/md5.js"></script>
+    <script src="Frontend/js/message_overlay.js"></script>
+    <script src="Frontend/js/utilidades.js"></script>
+    <script src="Frontend/js/validaciones.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -60,7 +60,7 @@
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="images/G_de_explorin_sin_fondo.png"
+                  <img src="Frontend/images/G_de_explorin_sin_fondo.png"
                     style="width: 185px;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Login</h4>
                 </div>
@@ -79,7 +79,7 @@
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" onclick="loginUsuario();">Acceder</button>
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" id="submit" type="button" onclick="loginUsuario();">Acceder</button>
                     <!-- <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a> -->
                   </div>
 
@@ -119,7 +119,15 @@
 
 </html>
 <script>
-    // FUNCION LOGIN
+    // EEVENTO PARA PRESIONAR ENTER DESPUES DE LA CONTRASEÑA =====================
+    $("#passwordUsuarioAlta").keypress(function(event) {
+          if (event.keyCode === 13) {
+              $("#submit").click();
+          }
+      });
+    // ===========================================================================
+
+    // FUNCION LOGIN =============================================================
     function loginUsuario(){
       var correo = $("#correoUsuarioAlta").val();
       var password = $("#passwordUsuarioAlta").val();
@@ -156,20 +164,31 @@
           return false;
       }
 
-      showMessageOverlay("VALIDANDO USUARIO...", "images/cargando.gif", "200", "200", "sending");
+      json_data = {
+        "userEmail": correo,
+        "userPassword": calcMD5(password)
+      }
+
+      showMessageOverlay("VALIDANDO USUARIO...", "Frontend/images/cargando.gif", "200", "200", "sending");
       $.ajax({
         method:"POST",
-        url:"Backend/backend/backend_login.php",
+        url:"Backend/backend/usuarios/backend_login.php",
         data:json_data,
         success:function(data){
           var respuesta = JSON.parse(data);
           if(respuesta["codigo"] == "fallo"){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: respuesta["mensaje"],
+                // footer: '<a href="">Why do I have this issue?</a>'
+            })
             $("#correoUsuarioAlta").val("");
             $("#passwordUsuarioAlta").val("");
             closeMessageOverlay()
           }
           else if(respuesta["codigo"] == "exito"){
-            window.location = ("forms/");
+            window.location = ("Frontend/forms/");
             $("#correoUsuarioAlta").val("");
             $("#passwordUsuarioAlta").val("");
             closeMessageOverlay();
@@ -177,4 +196,5 @@
         }
       });
     }
+    // ===========================================================================
 </script>

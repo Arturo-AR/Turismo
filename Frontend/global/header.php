@@ -30,12 +30,23 @@
     <script src="../js/validaciones.js"></script>
     <script src="../js/md5.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Se adjuntan los CDNS para la tabla paginada de resultados -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+    <!-- ========================================================= -->
+
   </head>
   <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="../">Exploring</a>
+        <a class="navbar-brand" href="./">Exploring</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -43,12 +54,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <!-- <li class="nav-item"><a class="nav-link" href="#about">Usuarios</a></li> -->
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link menu dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Alta Usuarios</a></li>
+                <li><a class="dropdown-item" href="form_usuarios.php">Usuarios</a></li>
               </ul>
-            </li>
+            </li> -->
+            <li class="nav-item"><a class="nav-link" href="form_usuarios.php">Usuarios</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Lugares</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Cerrar sesión</a></li>
           </ul>
