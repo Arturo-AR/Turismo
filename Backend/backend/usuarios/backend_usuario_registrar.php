@@ -27,8 +27,8 @@ if (!isset($backendIncluido)) {
 // $userAge            = '10';
 
 // $fechaAlta = date('Y/m/d');
-$userFirstName      = $_POST['userFirstName'];
-$userLastName       = $_POST['userLastName'];
+$userFirstName      = ucwords($_POST['userFirstName']);
+$userLastName       = ucwords($_POST['userLastName']);
 $userEmail          = $_POST['userEmail'];
 $userPassword       = $_POST['userPassword'];
 $userPhoneNumber    = $_POST['userPhoneNumber'];
@@ -53,9 +53,9 @@ if (!isset($backendIncluido)) {
     $codigo = "exito";
     $mensaje = "Usuario registrado";
 }else {
-        $codigo = "fallo";
-        $mensaje = "Usuario no creado";
-        $objetoRespuesta = array();
+    $codigo = "fallo";
+    $mensaje = "Usuario no creado";
+    $objetoRespuesta = array();
 }
 
 if (!isset($backendIncluido))
