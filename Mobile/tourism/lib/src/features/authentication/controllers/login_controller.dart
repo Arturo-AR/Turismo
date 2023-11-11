@@ -1,3 +1,6 @@
+import 'package:exploring/src/features/authentication/models/login_request_model.dart';
+import 'package:exploring/src/network/models/main_server_response.dart';
+import 'package:exploring/src/network/models/server_response.dart';
 import 'package:exploring/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,19 +21,21 @@ class LoginController extends GetxController {
   Future<void> login() async {
     print("entro al login de loginController");
     try {
-      isLoading.value = true;
-      if (!loginFormKey.currentState!.validate()) {
-        isLoading.value = false;
-        return;
-      }
       final auth = AuthenticationRepository.instance;
-      await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+      //await auth.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+      LoginRequest loginRequest = LoginRequest(email.text.trim(), password.text.trim());
+
+      auth.login(loginRequest).then((value) {
+        //print(auth.userId);
+        auth.setInitialScreen(value.responseObject?.userid);
+      });
       //print(auth.userId);
       //auth.setInitialScreen(auth.userId);
 
     } catch (e) {
-      isLoading.value = false;
+      //isLoading.value = false;
       //Helper.errorSnackBar(title: tOhSnap, message: e.toString());
+      throw Exception("error");
     }
   }
 }
