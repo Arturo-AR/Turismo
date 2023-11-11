@@ -1,3 +1,14 @@
+<?php
+  // $title       = "INICIO | EXPLORING";
+  // $needSession = true;
+  // $home        = false;
+
+  require_once("../global/header.php");
+  // $tipoUsuario = $_SESSION['idTipoUsuario'];
+  // $nombresUsuario = $_SESSION['nombreUsuario'];
+  // $apellidosUsuario = $_SESSION['apellidoUsuario'];
+
+?>
 <!-- About-->
 <section class="about-section text-center" id="about">
         <div class="container px-4 px-lg-5">

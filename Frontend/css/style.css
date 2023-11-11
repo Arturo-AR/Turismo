@@ -11296,3 +11296,55 @@ body {
 }
 /* ======================== */
 
+.btnAlta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnAlta button{
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #273746;
+  border: 1px solid #ABB2B9;
+  color: #fff;
+  font-size: 17px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.btnAlta button:hover {
+  background: #ABB2B9;
+  border: 1px solid #273746;
+  color: #000;
+}
+
+table thead tr th.encabezados {
+  text-align: center;
+}
+
+table tbody tr td.resultados {
+  text-align: center;
+}
+
+table tbody tr td.resultados .operacionesTd a.opcTd{
+  padding-right: 10%;
+}
+
+table tbody tr td.resultados .operacionesTd a{
+  color: #145A32;
+  text-decoration: none;
+}
+
+table tbody tr td.resultados .operacionesTd a:hover{
+  color: #1B2631;
+}
+
+table tbody tr td.resultados .dropdown button{
+  color: #145A32;
+}
+
+table tbody tr td.resultados .dropdown button:hover{
+  color: #1B2631;
+}
