@@ -4,22 +4,17 @@ class ServerResponse<T> {
   late String responseCode;
   late String responseMessage;
   T? responseObject;
-  String? respuesta;
 
   ServerResponse(
       {required this.responseCode,
       required this.responseMessage,
-      this.responseObject,
-      this.respuesta});
+      this.responseObject,});
 
   factory ServerResponse.fromJsonMap(Map<String, dynamic> json) {
     ServerResponse<T> responseServer = ServerResponse(
         responseCode: json['responsecode'],
         responseMessage: json['responsemessage']);
 
-    if (json.containsKey('respuesta')) {
-      responseServer.respuesta = json['respuesta'];
-    }
 
     if (T == MainServerResponse) {
       responseServer.responseObject =
