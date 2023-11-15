@@ -1,24 +1,24 @@
-import 'package:exploring/src/network/models/main_server_response.dart';
+import 'package:exploring/src/network/models/response/login_server_response_model.dart';
 
-class ServerResponse<T> {
+class MainServerResponse<T> {
   late String responseCode;
   late String responseMessage;
   T? responseObject;
 
-  ServerResponse(
-      {required this.responseCode,
-      required this.responseMessage,
-      this.responseObject,});
+  MainServerResponse({
+    required this.responseCode,
+    required this.responseMessage,
+    this.responseObject,
+  });
 
-  factory ServerResponse.fromJsonMap(Map<String, dynamic> json) {
-    ServerResponse<T> responseServer = ServerResponse(
-        responseCode: json['responsecode'],
-        responseMessage: json['responsemessage']);
+  factory MainServerResponse.fromJsonMap(Map<String, dynamic> json) {
+    MainServerResponse<T> responseServer = MainServerResponse(
+        responseCode: json['response_code'],
+        responseMessage: json['response_message']);
 
-
-    if (T == MainServerResponse) {
+    if (T == LoginServerResponse) {
       responseServer.responseObject =
-          MainServerResponse.fromJsonMap(json['responseobject']) as T?;
+          LoginServerResponse.fromJsonMap(json['response_object']) as T?;
     }
     /*else if (T == HelpResponse) {
       responseServer.responseObject =

@@ -1,10 +1,10 @@
-import 'package:exploring/src/features/authentication/models/login_request_model.dart';
+import 'package:exploring/src/network/models/request/login_server_request_model.dart';
 import 'package:exploring/src/features/authentication/models/user_model.dart';
 import 'package:exploring/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:exploring/src/features/core/screens/places_screen.dart';
 import 'package:exploring/src/network/auth_remote_datasource.dart';
-import 'package:exploring/src/network/models/main_server_response.dart';
-import 'package:exploring/src/network/models/server_response.dart';
+import 'package:exploring/src/network/models/response/login_server_response_model.dart';
+import 'package:exploring/src/network/models/main_server_response_model.dart';
 import 'package:get/get.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -18,7 +18,7 @@ class AuthenticationRepository extends GetxController {
   /// Getters
   User? get user => _user.value;
 
-  String get getUserID => user?.id ?? "";
+  int get getUserID => user?.userId ?? -1;
 
   /// Loads when app Launch from main.dart
   @override
@@ -41,8 +41,8 @@ class AuthenticationRepository extends GetxController {
   ///
 
 
-  Future<ServerResponse<MainServerResponse>> login(
-      LoginRequest loginRequestBody) {
+  Future<MainServerResponse<LoginServerResponse>> login(
+      LoginServerRequest loginRequestBody) {
     print("Entro al repository");
     return authRemoteDataSource.login(loginRequestBody);
   }

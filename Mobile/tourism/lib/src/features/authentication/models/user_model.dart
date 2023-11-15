@@ -1,22 +1,33 @@
 class User {
-  final String? id;
-  final String fullName;
-  final String email;
-  final String phoneNo;
-  final String password;
+  final int userId;
+  final String userFirstName;
+  final String userLastName;
+  final String userEmail;
+  final String userPassword;
+  final String userPhoneNumber;
+  final int userAge;
 
   /// Constructor
-  const User(
-      {this.id, required this.email, required this.password, required this.fullName, required this.phoneNo});
+  const User({
+    required this.userId,
+    required this.userFirstName,
+    required this.userLastName,
+    required this.userEmail,
+    required this.userPassword,
+    required this.userPhoneNumber,
+    required this.userAge,
+  });
 
-  /// convert model to Json structure so that you can it to store data in Firesbase
+  /// convert model to Json structure so that you can it to store data
   toJson() {
     return {
-      "FullName": fullName,
-      "Email": email,
-      "Phone": phoneNo,
-      "Password": password,
+      "userId": userId,
+      "userFirstName": userFirstName,
+      "userLastName": userLastName,
+      "userEmail": userEmail,
+      "userPassword": userPassword,
+      "userPhoneNumber": userPhoneNumber,
+      "userAge": userAge,
     };
   }
-
 }
