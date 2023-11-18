@@ -1,8 +1,8 @@
-class LoginRequest {
+class LoginServerRequest {
   String userEmail;
   String userPassword;
 
-  LoginRequest(this.userEmail, this.userPassword);
+  LoginServerRequest(this.userEmail, this.userPassword);
 
   Map<String, dynamic> toJson() => {
         'user_email': userEmail,
