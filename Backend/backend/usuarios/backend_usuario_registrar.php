@@ -19,20 +19,22 @@ if (!isset($backendIncluido)) {
 }
 
 //POST TEST
-// $userFirstName      = 'Test';
-// $userLastName       = 'Test';
-// $userEmail          = 'Test';
-// $userPassword       = 'Test';
-// $userPhoneNumber    = '1234567890';
-// $userAge            = '10';
+$platformType       = 'app';
+$userFirstName      = 'Abdiel';
+$userLastName       = 'No se';
+$userEmail          = 'ab@nose';
+$userPassword       = '1234';
+$userPhoneNumber    = '2156349064';
+$userAge            = '20';
 
 // $fechaAlta = date('Y/m/d');
-$userFirstName      = ucwords($_POST['userFirstName']);
-$userLastName       = ucwords($_POST['userLastName']);
-$userEmail          = $_POST['userEmail'];
-$userPassword       = $_POST['userPassword'];
-$userPhoneNumber    = $_POST['userPhoneNumber'];
-$userAge            = $_POST['userAge'];
+// $userFirstName      = ucwords($_POST['userFirstName']);
+// $userLastName       = ucwords($_POST['userLastName']);
+// $userEmail          = $_POST['userEmail'];
+// $userPassword       = $_POST['userPassword'];
+// $userPhoneNumber    = $_POST['userPhoneNumber'];
+// $userAge            = $_POST['userAge'];
+
 
 $resultadoRegistrarUsuario = registrarUsuario($dbConnect,$userFirstName,$userLastName,$userEmail,$userPassword,$userPhoneNumber,$userAge);
 $arrayResultados = unirArrays($arrayResultados,$resultadoRegistrarUsuario);
@@ -46,6 +48,9 @@ $arrayResultados = unirArrays($arrayResultados,$resultadoRegistrarUsuario);
 // $detalleMovimiento = $nombreUsuarioLogueado." Registro un usuario: ".$usuario;
 // $crearLogMovimientos = crearLogMovimientos($dbConnect, $fechaOper, $horaOper, $idUsuarioCreado, $usuarioOper, $idEmpresa, $area, $detalleMovimiento);
 // $arrayResultados = unirArrays($arrayResultados, $crearLogMovimientos);
+if ($platformType == 'app') {
+    $objetoRespuesta['registro'] = true;
+}
 
 if (!isset($backendIncluido)) {
     $ejecutarDb = true;
