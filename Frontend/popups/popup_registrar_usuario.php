@@ -212,7 +212,7 @@
             "userPassword": calcMD5(passwordConfirmacionUsuarioAlta),
             "userPhoneNumber": telefonoUsuarioAlta,
             "userAge": edadUsuarioAlta,
-            "platformType": web
+            "platformType": "web"
         }
 
         showMessageOverlay("CARGANDO...", "../images/cargando.gif", "200", "200", "sending");

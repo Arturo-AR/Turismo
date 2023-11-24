@@ -16,13 +16,14 @@ if(!isset($backendIncluido)){
 
 // POST TEST
 // $userID    = 1;
-$platformType = 'web';
-$userEmail = 'Test';
-$password  = 'Test';
+// $platformType = 'web';
+// $userEmail = 'Test';
+// $password  = 'Test';
 
 // DATOS PEDIDOS POR POST
-// $userEmail = $_POST['userEmail'];
-// $password  = $_POST['userPassword'];
+$userEmail = $_POST['userEmail'];
+$password  = $_POST['userPassword'];
+$platformType = $_POST['platformType'];
 
 // OBTENEMOS LOS DATOS PARA EL INICIO DE SESION
 $datosUsuario = inciarSesionUsuario($dbConnect, 'userEmail', $userEmail, $password);

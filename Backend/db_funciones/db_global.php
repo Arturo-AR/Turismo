@@ -7,14 +7,19 @@ function comenzarConexion($db = 0){
 // Production
 
    if ($db == 0) {
-    $DBName = "u842376912_exploring_test";
+    // $DBName = "u842376912_exploring_test";
+    $DBName = "exploring";
   } else {
     $DBName = $db;
   }
 
+  // $DBServer =  "localhost";
+  // $DBUser   =  "u842376912_root";
+  // $DBPass   =  "kw2=Ec6[q#Z9";
+
   $DBServer =  "localhost";
-  $DBUser   =  "u842376912_root";
-  $DBPass   =  "kw2=Ec6[q#Z9";
+  $DBUser   =  "root";
+  $DBPass   =  "";
   
 
 // TEST
