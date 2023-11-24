@@ -41,3 +41,6 @@ const String aGoogle = "Google";
 const String aSignUpTitle = "Empecemos el viaje!";
 const String aSignUpSubTitle = "Crea tu perfil para iniciar tu aventura.";
 const String aAlreadyHaveAnAccount = "Ya tienes una cuenta";
+
+// -- API connections
+const baseUrl = "http://192.168.12.173/clothes_app";

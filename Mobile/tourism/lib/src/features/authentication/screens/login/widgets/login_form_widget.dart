@@ -12,7 +12,8 @@ class LoginFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController()); // se agrego el controlador del login
+    final controller =
+        Get.put(LoginController()); // se agrego el controlador del login
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Form(
@@ -84,8 +85,9 @@ class LoginFormWidget extends StatelessWidget {
             ),*/
 
             /// -- LOGIN BTN
-            Obx( // se agrego este boton
-                  () => APrimaryButton(
+            Obx(
+              // se agrego este boton
+              () => APrimaryButton(
                 isLoading: controller.isLoading.value ? true : false,
                 text: aLogin.tr,
                 onPressed: controller.isLoading.value
