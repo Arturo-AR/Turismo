@@ -4,10 +4,10 @@
   // $home        = false;
 
   require_once("../global/header.php");
-  // $tipoUsuario = $_SESSION['idTipoUsuario'];
+  $idTipoUsuario = $_SESSION['idTipoUsuario'];
   // $nombresUsuario = $_SESSION['nombreUsuario'];
   // $apellidosUsuario = $_SESSION['apellidoUsuario'];
-
+// print_r($idTipoUsuario);
 ?>
 <!-- About-->
 <section class="about-section text-center" id="about">

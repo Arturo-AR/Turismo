@@ -17,6 +17,8 @@
     <link rel="icon" type="image/x-icon" href="#" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -61,13 +63,12 @@
               </ul>
             </li> -->
             <li class="nav-item"><a class="nav-link" href="form_usuarios.php">Usuarios</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Lugares</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Cerrar sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="form_lugares.php">Lugares</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="abrirPopupCerrarSesion();">Cerrar sesión</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <div class="cuerpoPrincipal">
-    
     

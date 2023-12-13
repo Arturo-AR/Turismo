@@ -7,7 +7,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="iconoMensaje"></div>
         <p class="textoMensaje"></p>
       </div>
       <div class="modal-footer">
@@ -32,7 +31,7 @@
 
   // FUNCION CERRAR SESION ======================================================
   function cerrarSesion(){
-    window.location = ("../");
+    window.location = ("../../");
   }
   // ============================================================================
 </script>
