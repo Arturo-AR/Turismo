@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:exploring/src/features/core/controllers/qr_scanner_controller.dart';
 import 'package:exploring/src/features/core/models/place_model.dart';
+import 'package:exploring/src/features/core/screens/location_selector_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:exploring/src/constants/colors.dart';
@@ -100,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () =>
-                                  Get.offAll(() => PlacesScreen()),
+                                  Get.offAll(() => LocationSelectorScreen()),
                               //onPressed: () {},
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(

@@ -1,3 +1,4 @@
+import 'package:exploring/src/network/models/response/locations_list_server_response_model.dart';
 import 'package:exploring/src/network/models/response/login_server_response_model.dart';
 
 class MainServerResponse<T> {
@@ -19,6 +20,10 @@ class MainServerResponse<T> {
     if (T == LoginServerResponse) {
       responseServer.responseObject =
           LoginServerResponse.fromJsonMap(json['response_object']) as T?;
+
+    } else if (T == List<LocationServerResponse>) {
+      responseServer.responseObject = List as T;
+          //LocationServerResponse.fromJsonMap(json['response_object']) as T?;
     }
     /*else if (T == HelpResponse) {
       responseServer.responseObject =
