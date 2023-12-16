@@ -1,0 +1,43 @@
+16/12/2023
+RENAME TABLE municipio TO country;
+RENAME TABLE estado TO state;
+
+ALTER TABLE country CHANGE munID countryID INT(11) AUTO_INCREMENT;
+ALTER TABLE country CHANGE munName countryName varchar(100);
+ALTER TABLE state CHANGE estadoID stateID INT(11) AUTO_INCREMENT;
+ALTER TABLE state CHANGE estadoName stateName varchar(100);
+
+
+CREATE TABLE town (
+    townID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    townName VARCHAR(100),
+    stateID INT(11),
+    FOREIGN KEY (stateID) REFERENCES state(stateID)
+);
+
+CREATE TABLE users_places (
+    userID INT(11),
+    placeID INT(11),
+    FOREIGN KEY (userID) REFERENCES users(userID),
+    FOREIGN KEY (placeID) REFERENCES places(placeID)
+);
+
+CREATE TABLE logMove (
+    logID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    operDate DATE,
+    operTime TIME,
+    userID INT(11),
+    area VARCHAR(50),
+    movDetail VARCHAR(200),
+    eliminado bit(1)
+);
+
+ALTER TABLE state
+ADD COLUMN countryID INT,
+ADD CONSTRAINT fk_country_constraint
+FOREIGN KEY (countryID) REFERENCES country(countryID);
+
+ALTER TABLE places
+ADD COLUMN townID INT,
+ADD CONSTRAINT fk_town_constraint
+FOREIGN KEY (townID) REFERENCES town(townID);

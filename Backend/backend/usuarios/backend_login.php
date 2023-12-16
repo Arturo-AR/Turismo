@@ -23,7 +23,6 @@ if(!isset($backendIncluido)){
 // DATOS PEDIDOS POR POST
 $userEmail = $_POST['userEmail'];
 $password  = $_POST['userPassword'];
-$platformType = $_POST['platformType'];
 
 // OBTENEMOS LOS DATOS PARA EL INICIO DE SESION
 $datosUsuario = inciarSesionUsuario($dbConnect, 'userEmail', $userEmail, $password);
