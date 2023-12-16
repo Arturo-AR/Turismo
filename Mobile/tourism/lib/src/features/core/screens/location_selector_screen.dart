@@ -14,57 +14,62 @@ class LocationSelectorScreen extends StatelessWidget {
       appBar: const AAppBarWidget(
         title: "Seleccione...",
       ),
-      body: Obx(() {
-        var list = locationSelectorController.locationIndex.value == 0
-            ? locationSelectorController.countriesList
-            : locationSelectorController.locationIndex.value == 1
-                ? locationSelectorController.statesList
-                : locationSelectorController.townsList;
-        return ListView.builder(
-          shrinkWrap: true,
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 40),
-          itemCount: list.length,
-          itemBuilder: (context, i) {
-            final myObject = list[i];
-            return InkWell(
-              onTap: () {
-                if (locationSelectorController.locationIndex.value == 0) {
-                  locationSelectorController.locationIndex.value = 1;
-                } else if (locationSelectorController.locationIndex.value ==
-                    1) {
-                  locationSelectorController.locationIndex.value = 2;
-                } else {
-                  Get.off(PlacesScreen());
-                }
-              },
-              child: Card(
-                child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            myObject.name,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+      body: Obx(
+        () {
+          var locationsList = locationSelectorController.locationsList;
+
+          return locationsList.isEmpty
+              ? const Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.only(left: 30, right: 30, top: 40),
+                  itemCount: locationsList.length,
+                  itemBuilder: (context, i) {
+                    final myObject = locationsList[i];
+                    return InkWell(
+                      onTap: () {
+                        locationSelectorController.getLocationList(myObject.id);
+                        //locationSelectorController.locationIndex.value += 1;
+                        /*if (locationSelectorController.locationIndex.value ==
+                            0) {
+                          locationSelectorController.locationIndex.value = 1;
+                        } else if (locationSelectorController
+                                .locationIndex.value ==
+                            1) {
+                          locationSelectorController.locationIndex.value = 2;
+                        } else {
+                          Get.off(PlacesScreen());
+                        }*/
+                      },
+                      child: Card(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20)),
+                          margin: const EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    myObject.name,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-        );
-      }),
+                    );
+                  },
+                );
+        },
+      ),
     );
   }
 }
