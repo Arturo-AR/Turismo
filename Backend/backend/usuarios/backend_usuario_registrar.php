@@ -13,8 +13,8 @@ if (!isset($backendIncluido)) {
     $objetoRespuesta = array();
     $codigo = '';
     $mensaje = '';
-    // $fechaOper = date('Y/m/d');
-    // $horaOper = date('H:s:i');
+    $fechaOper = date('Y/m/d');
+    $horaOper = date('H:s:i');
     // $usuarioOper = $_POST['idUsuarioOper'];
 }
 

@@ -5,9 +5,8 @@ function comenzarConexion($db = 0){
   date_default_timezone_set('America/Mexico_City');
 
 // Production
-
-  //  if ($db == 0) {
-  //   $DBName = "u842376912_exploring_test";
+  // if ($db == 0) {
+  //   $DBName = "exploring";
   // } else {
   //   $DBName = $db;
   // }

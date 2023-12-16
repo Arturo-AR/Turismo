@@ -166,7 +166,8 @@
 
       json_data = {
         "userEmail": correo,
-        "userPassword": calcMD5(password)
+        "userPassword": calcMD5(password),
+        "platformType": "web"
       }
 
       showMessageOverlay("VALIDANDO USUARIO...", "Frontend/images/cargando.gif", "200", "200", "sending");
