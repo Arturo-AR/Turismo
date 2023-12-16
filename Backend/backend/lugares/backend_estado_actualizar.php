@@ -18,11 +18,11 @@ if (!isset($backendIncluido)) {
 }
 
 //POST TEST
-$platformType   = 'app';
-$stateID      = 2;
+// $platformType   = 'app';
+// $stateID      = 2;
 
 
-// $stateID = $_POST['stateID'];
+$stateID = $_POST['stateID'];
 $resultObtenerInfoState = obtenerInfoState($dbConnect, 'stateID', $stateID);
 // $nombreUsuario = $resultadoObtenerDatos['nombres'];
 // $usuario = $resultadoObtenerDatos['usuario'];

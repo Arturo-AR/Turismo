@@ -5,27 +5,27 @@ function comenzarConexion($db = 0){
   date_default_timezone_set('America/Mexico_City');
 
 // Production
+  if ($db == 0) {
+    $DBName = "u842376912_exploring_test";
+  } else {
+    $DBName = $db;
+  }
+
+  $DBServer =  "localhost";
+  $DBUser   =  "u842376912_root";
+  $DBPass   =  "kw2=Ec6[q#Z9";
+  
+
+// TEST
   // if ($db == 0) {
   //   $DBName = "exploring";
   // } else {
   //   $DBName = $db;
   // }
-
+  
   // $DBServer =  "localhost";
-  // $DBUser   =  "u842376912_root";
-  // $DBPass   =  "kw2=Ec6[q#Z9";
-  
-
-// TEST
-  if ($db == 0) {
-    $DBName = "exploring";
-  } else {
-    $DBName = $db;
-  }
-  
-  $DBServer =  "localhost";
-  $DBUser   =  "root";
-  $DBPass   =  "";
+  // $DBUser   =  "root";
+  // $DBPass   =  "";
 
   $dbConnect = new mysqli($DBServer, $DBUser, $DBPass, $DBName) or die("Connect failed: %s\n". $dbConnect -> error);
 

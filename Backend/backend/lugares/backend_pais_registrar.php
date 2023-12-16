@@ -19,11 +19,11 @@ if (!isset($backendIncluido)) {
 }
 
 //POST TEST
-$platformType       = 'app';
-$countryName        = 'México';
+// $platformType       = 'app';
+// $countryName        = 'México';
 
 // $fechaAlta = date('Y/m/d');
-// $countryName      = $_POST['countryName'];
+$countryName      = $_POST['countryName'];
 
 
 $resultadoRegistrarCountry = registrarCountry($dbConnect,$countryName);
