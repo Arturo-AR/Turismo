@@ -5,6 +5,7 @@
 
     require_once("Frontend/popups/popup_mensaje.php");
     require_once("Frontend/popups/popup_message_overlay.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -92,13 +93,30 @@
 
               </div>
             </div>
-            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+            <!-- <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                     <h4 class="mb-4">Explorando Rincones</h4>
                     <p class="small mb-0">Adéntrate en el mundo de la búsqueda y de la diversión, explorando lugares los cuales no conoces. 
                       Exploring hace que tus visitas turísticas sean más divertidas, 
                       descubriendo nuevos lugares y mostrarte un poco de su historia.
                     </p>
+              </div>
+            </div> -->
+            <div class="col-lg-6 flip-container">
+              <div class="card">
+                <div class="frente">
+                  <img src="Frontend/images/fondo.jpg" alt="" style="width: 100%; height: 100%;" >
+                </div>
+                <div class="dorso">
+                  <img src="Frontend/images/LogoExplorinGre.png" alt="" style="width: 80%;">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <!-- <h4 class="mb-4">Explorando Rincones</h4> -->
+                    <p class="small mb-0">Adéntrate en el mundo de la búsqueda y de la diversión, explorando lugares los cuales no conoces. 
+                      Exploring hace que tus visitas turísticas sean más divertidas, 
+                      descubriendo nuevos lugares y mostrarte un poco de su historia.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
