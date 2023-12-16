@@ -19,21 +19,21 @@ if (!isset($backendIncluido)) {
 }
 
 //POST TEST
-$platformType       = 'app';
-$userFirstName      = 'Abdiel';
-$userLastName       = 'No se';
-$userEmail          = 'ab@nose';
-$userPassword       = '1234';
-$userPhoneNumber    = '2156349064';
-$userAge            = '20';
+// $platformType       = 'app';
+// $userFirstName      = 'Abdiel';
+// $userLastName       = 'No se';
+// $userEmail          = 'ab@nose';
+// $userPassword       = '1234';
+// $userPhoneNumber    = '2156349064';
+// $userAge            = '20';
 
 // $fechaAlta = date('Y/m/d');
-// $userFirstName      = ucwords($_POST['userFirstName']);
-// $userLastName       = ucwords($_POST['userLastName']);
-// $userEmail          = $_POST['userEmail'];
-// $userPassword       = $_POST['userPassword'];
-// $userPhoneNumber    = $_POST['userPhoneNumber'];
-// $userAge            = $_POST['userAge'];
+$userFirstName      = ucwords($_POST['userFirstName']);
+$userLastName       = ucwords($_POST['userLastName']);
+$userEmail          = $_POST['userEmail'];
+$userPassword       = $_POST['userPassword'];
+$userPhoneNumber    = $_POST['userPhoneNumber'];
+$userAge            = $_POST['userAge'];
 
 
 $resultadoRegistrarUsuario = registrarUsuario($dbConnect,$userFirstName,$userLastName,$userEmail,$userPassword,$userPhoneNumber,$userAge);

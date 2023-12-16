@@ -14,8 +14,6 @@ if($opc == 'L'){
     // $_POST['idPuntoVenta'];
 
     require_once('../Backend/backend/usuarios/backend_login.php');
-
-
 }
 
 echo json_encode($response, JSON_ERROR_UTF8);
