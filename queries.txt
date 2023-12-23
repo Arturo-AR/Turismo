@@ -41,3 +41,11 @@ ALTER TABLE places
 ADD COLUMN townID INT,
 ADD CONSTRAINT fk_town_constraint
 FOREIGN KEY (townID) REFERENCES town(townID);
+
+
+23/12/2023
+
+ALTER TABLE country ADD removed bit(1) DEFAULT 0;
+ALTER TABLE places ADD removed bit(1) DEFAULT 0;
+ALTER TABLE town ADD removed bit(1) DEFAULT 0;
+ALTER TABLE state ADD removed bit(1) DEFAULT 0;

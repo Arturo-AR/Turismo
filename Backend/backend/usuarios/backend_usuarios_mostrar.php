@@ -15,8 +15,8 @@ if (!isset($backendIncluido)) {
     $horaOper = date('H:s:i');
 }
 
-// $userID = 1;
-$userID = $_POST['userID'];
+$userID = 1;
+// $userID = $_POST['userID'];
 $resultShowUser = GetUserInfo($dbConnect, 'userID', $userID);
 if (!empty($resultShowUser)) {
     $objetoRespuesta['datos']['userFirstName'] = $resultShowUser['userFirstName'];
