@@ -11,7 +11,7 @@ function registrarCountry($dbConnect, $countryName) {
 
 function obtenerInfoCountry($dbConnect, $campo, $valor) {
     $fila = array();
-    $query = 'SELECT countryName FROM country WHERE '.$campo.' = ?';
+    $query = 'SELECT countryID, countryName FROM country WHERE '.$campo.' = ?';
     $stmt = $dbConnect->prepare($query);
     $stmt->bind_param('s', $valor);
     $stmt->execute();
@@ -27,6 +27,18 @@ function actualizarCountry($dbConnect, $countryName, $countryID) {
     return array($stmt->execute());
 }
 
+function obtenerInfoTotalCountry($dbConnect) {
+    $respuesta = array();
+    $query = "SELECT countryID, countryName FROM country WHERE removed = 0";
+    $stmt = $dbConnect->prepare($query);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    while ($fila = $resultado->fetch_assoc()) {
+        array_push($respuesta, $fila);
+    }
+    return $respuesta;
+}
+
 // ============================================== State ==============================================
 function registrarState($dbConnect,$stateName, $countryID) {
     $query = "INSERT INTO state (stateName, countryID)
@@ -37,14 +49,16 @@ function registrarState($dbConnect,$stateName, $countryID) {
 }
 
 function obtenerInfoState($dbConnect, $campo, $valor) {
-    $fila = array();
-    $query = 'SELECT stateName, countryID FROM state WHERE '.$campo.' = ?';
+    $respuesta = array();
+    $query = 'SELECT stateID, stateName, countryID FROM state WHERE '.$campo.' = ?';
     $stmt = $dbConnect->prepare($query);
     $stmt->bind_param('s', $valor);
     $stmt->execute();
     $resultado = $stmt->get_result();
-    $fila = $resultado->fetch_assoc();
-    return $fila;
+    while ($fila = $resultado->fetch_assoc()) {
+        array_push($respuesta, $fila);
+    }
+    return $respuesta;
 }
 
 function actualizarState($dbConnect, $stateName, $countryID, $stateID) {
@@ -63,6 +77,26 @@ function registrarTown($dbConnect,$townName, $stateID) {
     return array(array($stmt->execute()), $stmt->insert_id);
 }
 
+function obtenerInfoTown($dbConnect, $campo, $valor) {
+    $respuesta = array();
+    $query = 'SELECT townID, townName, stateID FROM town WHERE '.$campo.' = ?';
+    $stmt = $dbConnect->prepare($query);
+    $stmt->bind_param('s', $valor);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    while ($fila = $resultado->fetch_assoc()) {
+        array_push($respuesta, $fila);
+    }
+    return $respuesta;
+}
+
+function actualizarTown($dbConnect, $townName, $stateID, $townID) {
+    $query = 'UPDATE town SET townName = ?, stateID = ? WHERE townID = ?';
+    $stmt = $dbConnect->prepare($query);
+    $stmt->bind_param('sii', $townName, $stateID, $townID);
+    return array($stmt->execute());
+}
+
 // ============================================== Places ==============================================
 function registrarPlace($dbConnect, $placeName, $placeDescription, $placeImage, $townID) {
     $query = "INSERT INTO places (placeName, placeDescription, placeImage, townID)
@@ -72,11 +106,11 @@ function registrarPlace($dbConnect, $placeName, $placeDescription, $placeImage, 
     return array(array($stmt->execute()), $stmt->insert_id);
 }
 
-function obtenerDatosTodosUsuarios($dbConnect) {
+function obtenerInfoPlace($dbConnect, $campo, $valor) {
     $respuesta = array();
-    // $query      = "SELECT * FROM usuarios WHERE eliminado = 0";
-    $query = "SELECT * FROM users";
+    $query = 'SELECT placeID, placeName, placeDescription, placeImage, townID FROM places WHERE '.$campo.' = ?';
     $stmt = $dbConnect->prepare($query);
+    $stmt->bind_param('s', $valor);
     $stmt->execute();
     $resultado = $stmt->get_result();
     while ($fila = $resultado->fetch_assoc()) {
